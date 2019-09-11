@@ -16,3 +16,5 @@ Route::get('/', 'HomeController@index');
 Route::get('/about', function () {
     echo "about";
 });
+
+Route::get('blog', 'BlogController@index');
