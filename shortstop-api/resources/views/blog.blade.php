@@ -6,10 +6,8 @@
 @section('content')
 
     <h1>Blog Content</h1>
-    @foreach($posts as $post)
         <p>
-            {{ $post['title'] }}
+            Hello from the blog
         </p>
-    @endforeach
 
 @endsection

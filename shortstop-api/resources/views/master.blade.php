@@ -7,9 +7,6 @@
     <title> @yield('title') </title>
 </head>
 <body>
-
-    <h1>Dale Moore</h1>
     @yield('content')
-
 </body>
 </html>
