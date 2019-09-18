@@ -11,16 +11,7 @@
 |
 */
 
-Route::get('/', function(){
-    return view('pages.home');
-});
-
-Route::get('/about', function(){
-    return view('pages.about');
-});
-
-Route::get('/profile/{id}/{name}', function($id, $name){
-    return 'This is user ' . $name . ' with an ID of ' . $id;
-});
-
-Route::get('/blog', 'BlogController@index');
+Route::get('/', 'PagesController@index');
+Route::get('/about', "PagesController@about");
+Route::get('/profile/{id}', 'PagesController@profile');
+Route::get('/blog', 'PagesController@blog');
