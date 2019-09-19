@@ -49,7 +49,7 @@ class RegisterController extends Controller
         if (auth()->user()->role_id == 1) {
             return '/dashboard';
         }
-        else if (auth()->user()->role_id == 1){
+        else if (auth()->user()->role_id == 2){
             return '/dashboard';
         }
         else{
@@ -57,7 +57,7 @@ class RegisterController extends Controller
             $path = '/profile/'.$id;
             return $path;
         }
-        return '/home';
+        //return '/login';
     }
     /**
      * Get a validator for an incoming registration request.
@@ -82,6 +82,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        //$userId = $user->id;
+        Players::create([
+            'email' => $data['email'],
+            'profile_image' => 'black.JPG',
+        ]);
+
+        return $user;
         // return User::create([
         //     'name' => $data['name'],
         //     'email' => $data['email'],
