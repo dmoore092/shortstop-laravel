@@ -10,6 +10,8 @@
             <div>
                 {{Form::label('gender', 'Gender')}}
                 {{Form::text('gender', $profile->gender, ['class' => 'form', 'placeholder' => 'm or f'])}}
+                {{Form::label('email', 'Email')}}
+                {{Form::text('email', $profile->email, ['class' => 'form', 'placeholder' => 'Email'])}}
                 {{Form::label('cell_phone', 'Cell Phone')}}
                 {{Form::text('cell_phone', $profile->cell_phone, ['class' => 'form', 'placeholder' => 'Cell Phone'])}}
                 {{Form::label('home_phone', 'Home Phone')}}
@@ -72,8 +74,6 @@
                 {{Form::text('personal_statement', $profile->personal_statement, ['class' => 'form', 'placeholder' => 'Statement'])}}
                 {{Form::label('commitment', 'Commitment')}}
                 {{Form::text('commitment', $profile->commitment, ['class' => 'form', 'placeholder' => 'Commitment'])}}
-                {{Form::label('college', 'College')}}
-                {{Form::text('college', $profile->college, ['class' => 'form', 'placeholder' => 'College'])}}
                 {{Form::label('twitter', 'Twitter')}}
                 {{Form::text('twitter', $profile->twitter, ['class' => 'form', 'placeholder' => 'Twitter'])}}
                 {{Form::label('facebook', 'Facebook')}}

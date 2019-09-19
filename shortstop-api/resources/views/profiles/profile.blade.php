@@ -46,7 +46,6 @@
     {{$profile->ref3_phone}}
     {{$profile->personal_statement}}
     {{$profile->commitment}}
-    {{$profile->college}}
     {{$profile->twitter}}
     {{$profile->facebook}}
     {{$profile->instagram}}
