@@ -13,5 +13,7 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', "PagesController@about");
-Route::get('/profile/{id}', 'PagesController@profile');
+Route::get('/players', 'ProfileController@index');
 Route::get('/blog', 'PagesController@blog');
+
+Route::resource('profile' ,'ProfileController');

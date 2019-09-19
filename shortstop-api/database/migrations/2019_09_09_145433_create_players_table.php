@@ -16,7 +16,7 @@ class CreatePlayersTable extends Migration
         //create the db table structure here
         Schema::create('players', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('gender', array('m','f'));
+            $table->enum('gender', array('male','female'));
             $table->string('email');
             $table->string('cell_phone')->nullable();
             $table->string('home_phone')->nullable();
