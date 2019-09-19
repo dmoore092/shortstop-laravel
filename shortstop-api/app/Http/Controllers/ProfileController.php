@@ -83,7 +83,6 @@ class ProfileController extends Controller
         $edit = Players::find($id);
         $edit->gender = $request->input('gender');
         $edit->email = $request->input('email');
-        // $edit->id = $request->input($id);
         $edit->gender = $request->input('gender');
         $edit->email = $request->input('email');
         $edit->cell_phone = $request->input('cell_phone');

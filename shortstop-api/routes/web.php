@@ -17,3 +17,7 @@ Route::get('/players', 'ProfileController@index');
 Route::get('/blog', 'PagesController@blog');
 
 Route::resource('profile' ,'ProfileController');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
