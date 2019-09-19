@@ -20,6 +20,7 @@
     </head>
     <body>
         @include('includes.header')
+        @include('includes.messages')
         @yield('content')
             <hr />
             <footer>
@@ -37,5 +38,9 @@
                 </div>
             </footer>
         </div><!-- end of body-main -->
+        <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+        <script>
+            CKEDITOR.replace( 'summary-ckeditor' );
+        </script>
     </body>
 </html>

@@ -15,8 +15,8 @@ class ProfileController extends Controller
     public function index()
     {
         //this is when arriving at profile with no id set
-        $players = Players::all();
-        return view('pages.players')->with('players', $players);
+        $players = Players::orderBy('id')->paginate(1);
+        return view('profiles.players')->with('players', $players);
     }
 
     /**
@@ -26,7 +26,8 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        //return('test');
+        // return view('profiles.update');
     }
 
     /**
@@ -49,7 +50,7 @@ class ProfileController extends Controller
     public function show($id)
     {
         $profile = Players::find($id);
-        return view('pages.profile')->with('profile', $profile);
+        return view('profiles.profile')->with('profile', $profile);
     }
 
     /**
@@ -60,7 +61,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $profile = Players::find($id);
+        return view('profiles.update')->with('profile', $profile);
     }
 
     /**
@@ -72,7 +74,17 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'gender' => 'required',
+            'email' => 'required'    
+        ]);
+
+        $edit = Players::find($id);
+        $edit->gender = $request->input('gender');
+        $edit->email = $request->input('email');
+        $edit->save();
+
+        return redirect()->action('ProfileController@show', ['id'=>$id])->with('success', 'Profile Updated');
     }
 
     /**
@@ -83,6 +95,8 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $profile = Players::find($id);
+        $profile->delete();
+        return redirect()->action('ProfileController@index')->with('success', 'Profile Deleted');
     }
 }

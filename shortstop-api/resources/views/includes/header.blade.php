@@ -53,7 +53,7 @@
                 <li id="current"><a href="/">Home</a></li>
                 <li><a href="/profile">My Profile</a></li>
                 <li><a href="/about">About Us</a></li>
-                <li><a href="/findathletes">Find Athletes</a></li>
+                <li><a href="/players">Browse Athletes</a></li>
                <?php // <li><a href="findcoaches.php">Find Coaches</a></li>
                 //<li><a href="services.php">Services</a></li> ?>
                 <li><a href="/register">Register</a></li>

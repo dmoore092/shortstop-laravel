@@ -16,16 +16,6 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
-    public function players(){
-
-        return view('pages.players');
-    }
-
-    public function profile($id){
-
-        return view('pages.profile')->with('id', $id);
-    }
-
     public function blog(){
 
         return view('pages.blog');
