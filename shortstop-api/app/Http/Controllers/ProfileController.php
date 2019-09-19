@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //this is when arriving at profile with no id set
+        //this is when arriving at profile with no id set, show all players
         $players = Players::orderBy('id')->paginate(1);
         return view('profiles.players')->with('players', $players);
     }
@@ -49,6 +49,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
+        // shows specific profile
         $profile = Players::find($id);
         return view('profiles.profile')->with('profile', $profile);
     }
