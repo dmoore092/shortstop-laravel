@@ -20,7 +20,7 @@
     </head>
     <body>
         @include('includes.header')
-        @include('includes.messages')
+        {{-- @include('includes.messages') --}}
         @yield('content')
             <hr />
             <footer>
