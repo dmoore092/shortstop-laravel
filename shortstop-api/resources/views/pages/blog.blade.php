@@ -1,5 +1,4 @@
-
-@extends('master')
+@extends('layouts.app')
 
 @section('title', 'Athletic Prospects | Blog')
 
