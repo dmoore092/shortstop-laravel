@@ -32,7 +32,7 @@ class PlayerController extends Controller
                                                                                 'users.name', 
                                                                                 'players.profile_image',
                                                                                 'players.sport',
-                                                                                'players.primary_position')->paginate(5);
+                                                                                'players.primary_position')->paginate(4);
         //$users = User::orderBy('id')->paginate(5);
         //return $players;
         return view('profiles.players')->with('players', $players);
@@ -70,7 +70,8 @@ class PlayerController extends Controller
     {
         // shows specific player
         $player = Player::find($id);
-        return view('profiles.player')->with('player', $player);
+        $user = User::find($id);
+        return view('profiles.player')->with('player', $player)->with('user', $user);
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Athletic Prospects | About')
+@section('title', 'Athletic Prospects | About Us')
 
 @section('content')
 <div class="jumbotron col-md-7 ml-auto mr-auto">
