@@ -77,17 +77,31 @@
                 </div>
             </div>
         </nav>
-        <div class="float-right">
-            <form action='results.php' method='POST' id="search-form" class="form-inline">
-                <div class="form-row align-items-center">
-                    <div class="col-auto">
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="First or Last Name" name="search">
-                        <input class="btn btn-default" id="header-search-btn" type="submit" name="search-btn" value="Search">
+        <div class="header-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col-md-auto col-sm-8">
+                        <form action='results.php' method='POST' id="search-form" class="form-inline">
+                            <div class="form-row">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="First or Last Name" name="search">
+                                    <input class="btn btn-default" id="header-search-btn" type="submit" name="search-btn" value="Search">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>  
         </div>
+        
         <main class="py-4">
+            <div class="container">
+                <div class="ml-5">
+                    <a href = "/home"><img class="img-fluid" src = "/images/siteLogo.png" alt="Athletic Prospects Logo"/></a>
+                </div>
+            </div>
             @yield('content')
         </main>
     </div>

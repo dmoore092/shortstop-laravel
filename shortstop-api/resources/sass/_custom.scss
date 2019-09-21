@@ -1,3 +1,13 @@
+body{
+    background-image: url("/images/siteBackgroundSmall.jpg");
+    background-repeat: no-repeat;
+    background-color: black;  
+    background-position: 50% 5%;
+    font-family: "Lato", sans-serif !important;
+    // position:absolute;
+    // min-height: 100%;
+    // font-size: 16px;
+}
 #followUS{
     color: white;
 }
@@ -27,3 +37,18 @@
     background: #8081ce;
     color: white;
 }
+.header-search{
+    background-color: #bb0a1e;
+    border-bottom: 1px solid #000;
+}
+#search-form{
+    margin-top: 5px !important;
+}
+#header-search-btn{
+    background-color: #000;
+    color: white;
+    margin-top: -7px !important;
+}
+// .logo{
+//     border: 2px solid white;
+// }

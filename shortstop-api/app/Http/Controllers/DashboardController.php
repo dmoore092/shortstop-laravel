@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Player;
 use App\User;
 
 class DashboardController extends Controller
@@ -26,6 +27,7 @@ class DashboardController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('dashboard')->with('player', $user);
+        $player = Player::find($user_id);
+        return view('dashboard')->with('player', $player)->with('user', $user);
     }
 }
