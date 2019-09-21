@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Players extends Model
+class Player extends Model
 {
     //protected $table = 'blah';
     /**
@@ -15,4 +15,8 @@ class Players extends Model
     protected $fillable = [
         'email', 'profile_image',
     ];
+
+    public function player(){
+        return $this_>belongsTo('App/User');
+    }
 }

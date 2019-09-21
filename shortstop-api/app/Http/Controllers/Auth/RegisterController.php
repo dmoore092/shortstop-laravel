@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Players;
+use App\Player;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -46,18 +46,18 @@ class RegisterController extends Controller
     */
     protected function redirectTo()
     {
-        if (auth()->user()->role_id == 1) {
-            return '/dashboard';
-        }
-        else if (auth()->user()->role_id == 2){
-            return '/dashboard';
-        }
-        else{
-            $id = auth()->user()->role_id;
-            $path = '/profile/'.$id;
-            return $path;
-        }
-        //return '/login';
+        // if (auth()->user()->role_id == 1) {
+        //     return '/dashboard';
+        // }
+        // else if (auth()->user()->role_id == 2){
+        //     return '/dashboard';
+        // }
+        // else{
+        //     $id = auth()->user()->role_id;
+        //     $path = '/dashboard';
+        //     return $path;
+        // }
+        return '/dashboard';
     }
     /**
      * Get a validator for an incoming registration request.
@@ -89,7 +89,7 @@ class RegisterController extends Controller
         ]);
 
         //$userId = $user->id;
-        Players::create([
+        Player::create([
             'email' => $data['email'],
             'profile_image' => 'black.JPG',
         ]);

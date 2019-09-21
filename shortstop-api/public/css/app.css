@@ -10644,56 +10644,38 @@ a.text-dark:focus {
   }
 }
 
-.search-container {
-  display: none;
+#followUS {
+  color: white;
 }
 
-@media only screen and (min-width: 443px) {
-  .search-container {
-    display: block;
-    background-color: #bb0a1e;
-    height: 90px;
-    padding-top: 6px;
-    width: 100%;
-  }
-
-  #search-btn-header {
-    width: 100%;
-    color: white;
-    background-color: #000;
-  }
-
-  .move-right {
-    width: 90% !important;
-    margin: auto;
-  }
+.fa {
+  width: 25px;
+  padding: 7.5px 22px 20px 10px;
+  height: 22.5px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-right: 2px;
+  margin-bottom: 5px;
 }
 
-@media only screen and (min-width: 576px) {
-  #search-btn-header {
-    width: 75px;
-  }
-
-  .search-container {
-    height: 50px;
-  }
+.fa-facebook {
+  background: #3b5998;
+  color: white;
 }
 
-@media only screen and (min-width: 765px) {
-  .move-right {
-    margin-left: 30vw;
-  }
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
 
-@media only screen and (min-width: 991px) {
-  .move-right {
-    margin-left: 45vw;
-  }
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
-@media only screen and (min-width: 1200px) {
-  .move-right {
-    margin-left: 53vw;
-  }
+.fa-envelope {
+  background: #8081ce;
+  color: white;
 }
 

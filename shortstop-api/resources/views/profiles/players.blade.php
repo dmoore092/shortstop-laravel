@@ -6,13 +6,16 @@
 
 <div id="body-main">
     Profiles
-    @if(count($players) > 0)
-        @foreach($players as $player)
-            <div>
-            <h3><a href="/profile/{{$player->id}}">{{ $player->email }}</a></h3>
-            </div>
-        @endforeach
-        {{$players->links()}}
+    @if(count($users) > 0)
+        {{-- @foreach($players as $player) --}}
+            @foreach($users as $user)
+                <div>
+                    {{-- {{var_dump($user)}} --}}
+                <h3><a href="/players/{{$user->id}}">{{ $user->name }}</a></h3>
+                </div>
+            @endforeach
+        {{-- @endforeach --}}
+        {{$users->links()}}
     @else 
         <p>No Players Found</p>
     @endif

@@ -13,10 +13,10 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', "PagesController@about");
-Route::get('/players', 'ProfileController@index');
+// Route::get('/player', 'ProfileController@index');
 Route::get('/blog', 'PagesController@blog');
 
-Route::resource('profile' ,'ProfileController');
+Route::resource('players' ,'PlayerController');
 
 Auth::routes();
 

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Athletic Prospects | Profile')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,8 +14,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    {{$player->id}}
+                    <a href="/players/{{$player->id}}/edit">Edit My Profile</a>
+                    <br>
+                    <a href="/players/{{$player->id}}">View My Profile</a>
                 </div>
             </div>
         </div>
