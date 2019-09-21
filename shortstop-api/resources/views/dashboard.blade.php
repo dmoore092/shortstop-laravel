@@ -26,7 +26,7 @@
             </div>
             </div>
         </div>
-        </div>
+    </div>
     <hr class="my-4">
     @include('includes.footer')
 </div>

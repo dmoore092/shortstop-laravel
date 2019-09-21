@@ -1,25 +1,37 @@
 @extends('layouts.app')
 
-@section('title', 'Athletic Prospects | Profile')
+@section('title', 'Athletic Prospects | Players')
 
 @section('content')
 
-<div id="body-main">
-    Profiles
-    @if(count($users) > 0)
-        {{-- @foreach($players as $player) --}}
-            @foreach($users as $user)
-                <div>
-                    {{-- {{var_dump($user)}} --}}
-                <h3><a href="/players/{{$user->id}}">{{ $user->name }}</a></h3>
-                </div>
-            @endforeach
-        {{-- @endforeach --}}
-        {{$users->links()}}
-    @else 
-        <p>No Players Found</p>
-    @endif
-<div>
-        <hr class="my-4">
-    @include('includes.footer')
+<div class="jumbotron col-md-7 ml-auto mr-auto">
+  <h1 class="display-4">Players</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+    
+    <div class="card-deck">
+        @foreach($players as $player)
+        <div class="card ">
+            <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>
+                <p class="card-text">
+                    Sport: {{$player->sport}}
+                    <br>
+                    Position: {{$player->primary_position}}
+                    <br>
+                    <p class="card-text">{{$player->commitment}}</p>
+                </p>
+                
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+  <hr class="my-4">
+  {{$players->links()}}
+  @include('includes.footer')
+ 
+</div>
 @endsection
+

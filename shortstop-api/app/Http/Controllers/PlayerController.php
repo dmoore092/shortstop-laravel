@@ -28,10 +28,14 @@ class PlayerController extends Controller
     public function index()
     {
         //this is when arriving at /player with no id set, show all players
-        //$players = Player::orderBy('id')->paginate(5);
-        $users = User::orderBy('id')->paginate(5);
-        //return $users;
-        return view('profiles.players')->with('users', $users);
+        $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id', 
+                                                                                'users.name', 
+                                                                                'players.profile_image',
+                                                                                'players.sport',
+                                                                                'players.primary_position')->paginate(5);
+        //$users = User::orderBy('id')->paginate(5);
+        //return $players;
+        return view('profiles.players')->with('players', $players);
     }
 
     /**
