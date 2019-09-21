@@ -85,4 +85,6 @@
             {{Form::submit('Submit', ['class' => 'btn'])}}
         {!! Form::close() !!}
     <div>
+            <hr class="my-4">
+    @include('includes.footer')
 @endsection

@@ -10648,7 +10648,8 @@ body {
   background-image: url("/images/siteBackgroundSmall.jpg");
   background-repeat: no-repeat;
   background-color: black;
-  background-position: 50% 5%;
+  background-attachment: fixed;
+  background-position: 50% 20%;
   font-family: "Lato", sans-serif !important;
 }
 
@@ -10700,5 +10701,11 @@ body {
   background-color: #000;
   color: white;
   margin-top: -7px !important;
+}
+
+@media only screen and (min-width: 520px) {
+  body {
+    background-image: url("/images/siteBackground.jpg");
+  }
 }
 

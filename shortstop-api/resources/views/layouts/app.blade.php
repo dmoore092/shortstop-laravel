@@ -95,14 +95,14 @@
                 </div>
             </div>  
         </div>
-        
         <main class="py-4">
             <div class="container">
                 <div class="ml-5">
-                    <a href = "/home"><img class="img-fluid" src = "/images/siteLogo.png" alt="Athletic Prospects Logo"/></a>
+                    <a href = "/"><img class="img-fluid" src = "/images/siteLogo.png" alt="Athletic Prospects Logo"/></a>
                 </div>
             </div>
             @yield('content')
+            
         </main>
     </div>
 </body>

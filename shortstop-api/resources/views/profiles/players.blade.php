@@ -20,4 +20,6 @@
         <p>No Players Found</p>
     @endif
 <div>
+        <hr class="my-4">
+    @include('includes.footer')
 @endsection

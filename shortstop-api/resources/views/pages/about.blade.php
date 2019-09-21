@@ -24,11 +24,12 @@
             <br><br>
             The Athletic Prospects team teaches you to grow into responsible and hardworking adults by giving you the skills you need to achieve your dreams. 
         </p>
-        <hr class="my-4">
         <h2>Any Questions?</h2>
         <p>Email us at <a href="mailto:Kprestano@athleticprospects.com">Kprestano@athleticprospects.com</a></p>
         {{-- <p class="lead">
           <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </p> --}}
 <div>
+    <hr class="my-4">
+    @include('includes.footer')
 @endsection

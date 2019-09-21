@@ -7,4 +7,6 @@
 <div id="body-main">
     Profile {{$id}}
 <div>
+        <hr class="my-4">
+    @include('includes.footer')
 @endsection

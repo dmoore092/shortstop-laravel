@@ -8,5 +8,6 @@
         <p>
             Hello from the blog
         </p>
-
+        <hr class="my-4">
+        @include('includes.footer')
 @endsection
