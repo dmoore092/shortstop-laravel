@@ -9,9 +9,9 @@
   <p class="lead"></p>
   <hr class="my-4">
     
-    <div class="row">
+    <div class="row d-flex justify-content-around">
         @foreach($players as $player)
-        <div class="card col-lg-2 col-md-3 col-sm-4 col-6" style="max-width: 20rem;">
+        <div class="card col-lg-3  " style="max-width: 15rem;">
             <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
             <div class="card-body">
                 <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>

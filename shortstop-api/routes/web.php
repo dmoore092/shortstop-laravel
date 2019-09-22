@@ -14,8 +14,9 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', "PagesController@about");
 // Route::get('/player', 'ProfileController@index');
-Route::get('/blog', 'PagesController@blog');
+//Route::get('/blog', 'PagesController@blog');
 
+Route::resource('blog' ,'BlogController');
 Route::resource('players' ,'PlayerController');
 
 // Auth::routes();

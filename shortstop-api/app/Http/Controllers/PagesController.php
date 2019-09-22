@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
 
 class PagesController extends Controller
 {
@@ -14,10 +15,5 @@ class PagesController extends Controller
     public function about(){
 
         return view('pages.about');
-    }
-
-    public function blog(){
-
-        return view('pages.blog');
     }
 }
