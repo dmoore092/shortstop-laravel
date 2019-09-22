@@ -18,6 +18,7 @@ Route::get('/blog', 'PagesController@blog');
 
 Route::resource('players' ,'PlayerController');
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'DashboardController@index');

@@ -159,6 +159,9 @@ class PlayerController extends Controller
         $edit->ref3_jobtitle = $request->input('ref3_jobtitle');
         $edit->ref3_email = $request->input('ref3_email');
         $edit->ref3_phone = $request->input('ref3_phone');
+        $edit->showcase1 = $request->input('showcase1');
+        $edit->showcase2 = $request->input('showcase2');
+        $edit->showcase3 = $request->input('showcase3');
         $edit->personal_statement = $request->input('personal_statement');
         $edit->commitment = $request->input('commitment');
         $edit->twitter = $request->input('twitter');
@@ -180,22 +183,24 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        $player = Players::find($id);
+        $player = Player::find($id);
+        $user = User::find($id);
 
         //Check if post exists before deleting
         if (!isset($player)){
-            return redirect('/posts')->with('error', 'No Post Found');
+            return redirect('/players')->with('error', 'No Players Found');
         }
 
          // Check for correct user
-         if(auth()->user()->id !==$player->user_id){
-            return redirect('/posts')->with('error', 'Unauthorized Page');
+         if(auth()->user()->id !== $player->id){
+            return redirect('/blog')->with('error', 'Unauthorized Page');
         }
         if($player->profile_image != 'black.JPG'){
             // Delete Image
             Storage::delete('public/profile_images/'.$post->profile_image);
         }
         $player->delete();
+        $user->delete();
         return redirect()->action('PlayerController@index')->with('success', 'Profile Deleted');
     }
 }

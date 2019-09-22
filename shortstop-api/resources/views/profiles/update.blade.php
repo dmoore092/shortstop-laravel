@@ -70,6 +70,12 @@
                 {{Form::text('ref3_email', $player->ref3_email, ['class' => 'form', 'placeholder' => 'Email'])}}
                 {{Form::label('ref3_phone', 'Reference 3 Phone')}}
                 {{Form::text('ref3_phone', $player->ref3_phone, ['class' => 'form', 'placeholder' => 'Phone'])}}
+                {{Form::label('showcase1', 'Highlight Video 1')}}
+                {{Form::text('showcase1', $player->showcase1, ['class' => 'form', 'placeholder' => ''])}}
+                {{Form::label('showcase2', 'Highlight Video 2')}}
+                {{Form::text('showcase2', $player->showcase2, ['class' => 'form', 'placeholder' => ''])}}
+                {{Form::label('showcase3', 'Highlight Video 3')}}
+                {{Form::text('showcase3', $player->showcase3, ['class' => 'form', 'placeholder' => ''])}}
                 {{Form::label('personal_statement', 'Personal Statement')}}
                 {{Form::text('personal_statement', $player->personal_statement, ['class' => 'form', 'placeholder' => 'Statement'])}}
                 {{Form::label('commitment', 'Commitment')}}

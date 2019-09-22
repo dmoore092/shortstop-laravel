@@ -48,6 +48,9 @@ class CreatePlayersTable extends Migration
             $table->string('ref3_jobtitle')->nullable();
             $table->string('ref3_email')->nullable();
             $table->string('ref3_phone')->nullable();
+            $table->string('showcase1')->nullable();
+            $table->string('showcase2')->nullable();
+            $table->string('showcase3')->nullable();
             $table->string('personal_statement')->nullable();
             $table->string('commitment')->nullable();
             $table->string('service')->nullable();
