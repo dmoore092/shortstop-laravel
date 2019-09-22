@@ -53,7 +53,7 @@
                         <p class="card-text"><span class="profile-labels">State:</span> {{$player->state}}<p>
                         <p class="card-text"><span class="profile-labels">Zip:</span> {{$player->zip}} <p>
                         <p class="card-text"><span class="profile-labels">Class of:</span> {{$player->grad_year}} <p>
-                        <p class="card-text"><span class="profile-labels">Height:</span> {{$player->height}}<p>
+                        <p class="card-text"><span class="profile-labels">Height:</span> {{$player->height_feet}}' {{$player->height_inches}}''<p>
                         <p class="card-text"><span class="profile-labels">Weight:</span> {{$player->weight}} <p>
                     </div>
                 </div>

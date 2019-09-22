@@ -27,7 +27,8 @@ class CreatePlayersTable extends Migration
             $table->string('zip')->nullable();
             $table->string('highschool')->nullable();
             $table->string('weight')->nullable();
-            $table->string('height')->nullable();
+            $table->string('height_feet')->nullable();
+            $table->string('height_inches')->nullable();
             $table->string('grad_year')->nullable();
             $table->string('sport')->nullable();
             $table->string('primary_position')->nullable();

@@ -106,6 +106,7 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $this->validate($request, [
             'gender' => 'required',
             'email' => 'required'    
@@ -138,7 +139,8 @@ class PlayerController extends Controller
         $edit->zip = $request->input('zip');
         $edit->highschool = $request->input('highschool');
         $edit->weight = $request->input('weight');
-        $edit->height = $request->input('height');
+        $edit->height_feet = $request->input('height_feet');
+        $edit->height_inches = $request->input('height_inches');
         $edit->grad_year = $request->input('grad_year');
         $edit->sport = $request->input('sport');
         $edit->primary_position = $request->input('primary_position');

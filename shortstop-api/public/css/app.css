@@ -10711,6 +10711,23 @@ body {
   margin-bottom: 0px;
 }
 
+.update-label {
+  width: 150px;
+}
+
+.form-select {
+  width: 215px;
+}
+
+.height-labels {
+  padding-right: 50px;
+}
+
+.form-range {
+  padding-right: 55px;
+  margin-bottom: 15px;
+}
+
 @media only screen and (min-width: 520px) {
   body {
     background-image: url("/images/siteBackground.jpg");

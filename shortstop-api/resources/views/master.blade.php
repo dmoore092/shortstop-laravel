@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Home | Athletic Prospects</title>
@@ -21,8 +21,8 @@
     <body>
         @include('includes.header')
         {{-- @include('includes.messages') --}}
-        @yield('content')
-            <hr />
+        {{-- @yield('content') --}}
+            {{-- <hr />
             <footer>
                 <div id="foot-wrapper">
                     <span id="follow">Follow Us!</span>
@@ -42,5 +42,5 @@
         <script>
             CKEDITOR.replace( 'summary-ckeditor' );
         </script>
-    </body>
-</html>
+    </body> --}}
+{{-- </html>  --}}
