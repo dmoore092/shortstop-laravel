@@ -4,11 +4,11 @@
 
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-10 ml-auto mr-auto">
   <h1 class="display-4">Players</h1>
   <p class="lead"></p>
   <hr class="my-4">
-    
+
     <div class="row d-flex justify-content-around">
         @foreach($players as $player)
         <div class="card col-lg-3  " style="max-width: 15rem;">
@@ -22,7 +22,7 @@
                     <br>
                     <p class="card-text">{{$player->commitment}}</p>
                 </p>
-                
+
             </div>
         </div>
         @endforeach
@@ -31,7 +31,7 @@
   <hr class="my-4">
   {{$players->links()}}
   @include('includes.footer')
- 
+
 </div>
 @endsection
 

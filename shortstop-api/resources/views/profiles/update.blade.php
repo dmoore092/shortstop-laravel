@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Update Profile')
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-10 ml-auto mr-auto">
     {!! Form::open(['action' => ['PlayerController@update', $player->id], 'method' => 'POST']) !!}
     <h1 class="display-4">Edit Profile</h1>
     <div class="row">
@@ -39,7 +39,7 @@
                                                         'Texas' => 'Texas', 'U.S. Virgin Islands' => 'U.S. Virgin Islands', 'Utah' => 'Utah', 'Vermont' => 'Vermont', 'Virginia' => 'Virginia', 'Washington' => 'Washington',
                                                         'West Virginia' => 'West Virginia', 'Wisconsin' => 'Wisconsin', 'Wyoming' => 'Wyoming',
                                                         ), $player->state, ['class' => 'form-select'])}}
-                        
+
                         {{Form::label('zip', 'Zip', array('class' => 'update-label'))}}
                         {{Form::text('zip', $player->zip, ['class' => 'form', 'placeholder' => '12345'])}}
                         {{Form::label('highschool', 'Highschool', array('class' => 'update-label'))}}
@@ -52,7 +52,7 @@
                             {{-- {{Form::label('height_inches', '', array('class' => 'update-label float-right height-labels'))}} --}}
                             {{Form::selectRange('height_inches', 0, 11, $player->height_inches, ['class' => 'form-range'])}}
                         </div>
-                        
+
                         {{Form::label('grad_year', 'Class Of', array('class' => 'update-label'))}}
                         {{Form::text('grad_year', $player->grad_year, ['class' => 'form', 'placeholder' => 'Class Of'])}}
                         {{Form::label('gpa', 'GPA', array('class' => 'update-label'))}}
@@ -147,8 +147,7 @@
     {{Form::submit('Submit', ['class' => 'btn'])}}
   {!! Form::close() !!}
 <hr>
-@include('includes.footer') 
+@include('includes.footer')
 </div>{{-- end of jumbotron --}}
 @endsection
 
-            

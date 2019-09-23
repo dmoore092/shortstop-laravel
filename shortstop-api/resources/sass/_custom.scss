@@ -1,17 +1,17 @@
 body{
     background-image: url("/images/siteBackgroundSmall.jpg");
     background-repeat: no-repeat;
-    background-color: black; 
-    background-attachment:fixed; 
-    background-position: 50% 20%;
-    // background-position: center top;
+    background-color: black;
+    // background-attachment:fixed !important;
+
+    background-position: center -70px;
     // font-family: "Lato", sans-serif !important;
     font-family: 'Merriweather', serif;
 }
 #followUS{
     color: white;
 }
-.fa{    
+.fa{
     width: 25px;
     padding: 7.5px 22px 20px 10px;
     height: 22.5px;
@@ -50,7 +50,7 @@ body{
     margin-top: -7px !important;
 }
 .profile-labels{
-    color: #bb0a1e;    
+    color: #bb0a1e;
 }
 .profile-attributes{
     margin-bottom: 0px;
@@ -72,5 +72,6 @@ body{
 @media only screen and (min-width: 520px) {
     body{
         background-image: url("/images/siteBackground.jpg");
+        //  background-position: 50% -55% !important;
     }
 }

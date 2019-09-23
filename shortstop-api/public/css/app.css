@@ -10648,8 +10648,7 @@ body {
   background-image: url("/images/siteBackgroundSmall.jpg");
   background-repeat: no-repeat;
   background-color: black;
-  background-attachment: fixed;
-  background-position: 50% 20%;
+  background-position: center -70px;
   font-family: "Merriweather", serif;
 }
 

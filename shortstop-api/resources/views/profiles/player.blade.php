@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Profile')
 
 @section('content')
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-10 ml-auto mr-auto">
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
@@ -11,11 +11,11 @@
             {{-- hide edit button if not your profile --}}
                 <a class="btn btn-secondary" href="/players/{{$player->id}}/edit">Edit</a>
             @endif
-        @endif  
+        @endif
         <span class="float-right">
             @if(!auth::guest())
-                @if(auth::user()->id == $player->id) 
-                    {!! Form::open(['action' => ['PlayerController@destroy', $player->id], 'method' => 'POST', 'class' => 'btn']) !!}   
+                @if(auth::user()->id == $player->id)
+                    {!! Form::open(['action' => ['PlayerController@destroy', $player->id], 'method' => 'POST', 'class' => 'btn']) !!}
                         {{Form::hidden('_method', 'DELETE')}}
                         {{Form::submit('DELETE PROFILE', ['class' => 'btn btn-danger'])}}
                     {!! Form::close() !!}
@@ -156,19 +156,19 @@
 <div>
 
 
-                       
-  
+
+
     <hr class="my-4">
     @include('includes.footer')
 </div>
 @endsection
 
-{{-- 
-    
+{{--
+
     {{$player->id}}
 
 
-    
+
     {{$player->ref2_name}}
     {{$player->ref2_jobtitle}}
     {{$player->ref2_email}}
@@ -178,9 +178,9 @@
     {{$player->ref3_email}}
     {{$player->ref3_phone}}
     {{$player->personal_statement}}
-    
-    
+
+
     --}}
-    
+
 
 
