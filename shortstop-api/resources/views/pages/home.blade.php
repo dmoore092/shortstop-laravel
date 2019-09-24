@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Home')
 @section('content')
 
-<div class="jumbotron col-md-10 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto">
   <h1 class="display-4">Athletic Prospects</h1>
   <hr class="my-4">
   <p class="lead">Our mission is to build a strong community between Athletes and Coaches to create positive outcomes in life and in the

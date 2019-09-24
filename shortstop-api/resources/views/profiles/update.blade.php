@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Update Profile')
 @section('content')
 
-<div class="jumbotron col-md-10 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto">
     {!! Form::open(['action' => ['PlayerController@update', $player->id], 'method' => 'POST']) !!}
     <h1 class="display-4">Edit Profile</h1>
     <div class="row">

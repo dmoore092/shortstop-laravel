@@ -28,8 +28,9 @@ class PlayerController extends Controller
     public function index()
     {
         //this is when arriving at /player with no id set, show all players
-        $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id', 
-                                                                                'users.name', 
+        $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id',
+                                                                                'users.name',
+                                                                                'users.role',
                                                                                 'players.profile_image',
                                                                                 'players.sport',
                                                                                 'players.primary_position')->paginate(4);
@@ -83,7 +84,7 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $player = Player::find($id);
-        
+
         //Check if player exists before deleting
         if (!isset($player)){
             return redirect('/players')->with('error', 'No Player Found');
@@ -106,10 +107,10 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $this->validate($request, [
             'gender' => 'required',
-            'email' => 'required'    
+            'email' => 'required'
         ]);
 
          // Handle File Upload

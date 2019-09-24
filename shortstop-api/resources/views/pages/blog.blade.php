@@ -2,7 +2,7 @@
 
 @section('title', 'Athletic Prospects | Blog')
 @section('content')
-    <div class="jumbotron col-md-10 ml-auto mr-auto">
+    <div class="jumbotron col-md-7 ml-auto mr-auto">
         <h1 class="display-4">Blog @ Athletic Prospects</h1>
         <p class="lead"></p>
         <hr class="my-4">

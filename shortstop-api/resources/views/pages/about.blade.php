@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | About Us')
 
 @section('content')
-<div class="jumbotron col-md-10 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto">
         <h1 class="display-4">About Us</h1>
         <hr>
         <h2 class="display-5">Our Mission</h2>
