@@ -10727,6 +10727,11 @@ body {
   margin-bottom: 15px;
 }
 
+.btn-red {
+  background-color: #bb0a1e;
+  color: white;
+}
+
 @media only screen and (min-width: 520px) {
   body {
     background-image: url("/images/siteBackground.jpg");

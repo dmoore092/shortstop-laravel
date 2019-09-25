@@ -4,6 +4,16 @@
 @section('content')
 
 <div class="jumbotron col-md-7 ml-auto mr-auto">
+    <span class="float-right">
+        @if(!auth::guest())
+            @if(auth::user()->id == $player->id)
+                {!! Form::open(['action' => ['PlayerController@destroy', $player->id], 'method' => 'POST', 'class' => 'btn']) !!}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('DELETE PROFILE', ['class' => 'btn btn-danger'])}}
+                {!! Form::close() !!}
+            @endif
+        @endif
+    </span>
     {!! Form::open(['action' => ['PlayerController@update', $player->id], 'method' => 'POST']) !!}
     <h1 class="display-4">Edit Profile</h1>
     <div class="row">
@@ -15,7 +25,7 @@
                         {{Form::label('gender', 'Gender', array('class' => 'update-label'))}}
                         {{Form::select('gender', array('Male' => 'Male', 'Female' => 'Female'), $player->gender, ['class' => 'form-select'])}}
                         {{Form::label('email', 'Email', array('class' => 'update-label'))}}
-                        {{Form::text('email', $player->email, ['class' => 'form', 'placeholder' => 'Email'])}}
+                        
                         {{Form::label('cell_phone', 'Cell Phone', array('class' => 'update-label'))}}
                         {{Form::text('cell_phone', $player->cell_phone, ['class' => 'form', 'placeholder' => 'Cell Phone'])}}
                         {{Form::label('home_phone', 'Home Phone', array('class' => 'update-label'))}}
@@ -144,7 +154,7 @@
         </div>{{-- end of column --}}
     </div>{{-- end of row --}}
     {{Form::hidden('_method', 'PUT')}}
-    {{Form::submit('Submit', ['class' => 'btn'])}}
+    {{Form::submit('Submit', ['class' => 'btn btn-secondary'])}}
   {!! Form::close() !!}
 <hr>
 @include('includes.footer')

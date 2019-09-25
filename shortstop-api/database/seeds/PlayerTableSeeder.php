@@ -12,8 +12,18 @@ class PlayerTableSeeder extends Seeder
     public function run()
     {
         DB::table('players')->insert([
-            'gender' => 'male',
-            'email' => 'dmoore092@gmail.com'
+            'user_id' => 1,
+            'gender' => 'male'
+        ]);
+
+        DB::table('players')->insert([
+            'user_id' => 2,
+            'gender' => 'male'
+        ]);
+
+        DB::table('players')->insert([
+            'user_id' => 3,
+            'gender' => 'male'
         ]);
     }
 }

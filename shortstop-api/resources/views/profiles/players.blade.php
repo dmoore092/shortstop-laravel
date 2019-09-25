@@ -10,24 +10,27 @@
   <hr class="my-4">
 
     <div class="row d-flex justify-content-around">
-        @foreach($players as $player)
-        <?php var_dump($player); ?>
-            @if($player->role == 'player')
-                <div class="card col-lg-3  " style="max-width: 15rem;">
-                    <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
-                    <div class="card-body">
-                    <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>
-                        <p class="card-text">
-                            Sport: {{$player->sport}}
-                            <br>
-                            Position: {{$player->primary_position}}
-                            <br>
-                            <p class="card-text">{{$player->commitment}}</p>
-                        </p>
+        @if(count($players) > 0)
+            @foreach($players as $player)
+                @if($player->role == 'player')
+                    <div class="card col-lg-3  " style="max-width: 15rem;">
+                        <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
+                        <div class="card-body">
+                        <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>
+                            <p class="card-text">
+                                Sport: {{$player->sport}}
+                                <br>
+                                Position: {{$player->primary_position}}
+                                <br>
+                                <p class="card-text">{{$player->commitment}}</p>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            @endif
-        @endforeach
+                @endif
+            @endforeach
+        @else
+            <h1>No Players Found</h1>
+        @endif
     </div>
 
   <hr class="my-4">

@@ -12,16 +12,6 @@
                 <a class="btn btn-secondary" href="/players/{{$player->id}}/edit">Edit</a>
             @endif
         @endif
-        <span class="float-right">
-            @if(!auth::guest())
-                @if(auth::user()->id == $player->id)
-                    {!! Form::open(['action' => ['PlayerController@destroy', $player->id], 'method' => 'POST', 'class' => 'btn']) !!}
-                        {{Form::hidden('_method', 'DELETE')}}
-                        {{Form::submit('DELETE PROFILE', ['class' => 'btn btn-danger'])}}
-                    {!! Form::close() !!}
-                @endif
-            @endif
-        </span>
     </h1>
     <h4>{{$player->highschool}}</h4>
     <hr>
@@ -88,7 +78,7 @@
             @if($player->showcase1 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' src="{{$player->showcase1}}"></iframe>
+                        <iframe allowfullscreen type='text/html' src="https://www.youtube.com/embed/{{$player->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Player;
 use App\User;
+use Cohensive\Embed\Facades\Embed;
 
 class PlayerController extends Controller
 {
@@ -33,7 +34,7 @@ class PlayerController extends Controller
                                                                                 'users.role',
                                                                                 'players.profile_image',
                                                                                 'players.sport',
-                                                                                'players.primary_position')->paginate(4);
+                                                                                'players.primary_position')->where('users.role','player')->paginate(4);
         //$users = User::orderBy('id')->paginate(5);
         //return $players;
         return view('profiles.players')->with('players', $players);
@@ -84,6 +85,7 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $player = Player::find($id);
+        $user = User::find($id);
 
         //Check if player exists before deleting
         if (!isset($player)){
@@ -95,7 +97,7 @@ class PlayerController extends Controller
             return redirect('/players')->with('error', 'Unauthorized Page');
         }
 
-        return view('profiles.update')->with('player', $player);
+        return view('profiles.update')->with('player', $player)->with('user', $user);
     }
 
     /**
@@ -110,7 +112,6 @@ class PlayerController extends Controller
 
         $this->validate($request, [
             'gender' => 'required',
-            'email' => 'required'
         ]);
 
          // Handle File Upload
@@ -126,12 +127,27 @@ class PlayerController extends Controller
             // Upload Image
             $path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
         }
+        
+        if($request->has('showcase1')){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
+                $showcase1 = $match[1];
+            }
+        }
+
+        if($request->has('showcase2')){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
+                $showcase2 = $match[1];
+            }
+        }
+
+        if($request->has('showcase3')){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
+                $showcase3 = $match[1];
+            }
+        }
 
         $edit = Player::find($id);
         $edit->gender = $request->input('gender');
-        $edit->email = $request->input('email');
-        $edit->gender = $request->input('gender');
-        $edit->email = $request->input('email');
         $edit->cell_phone = $request->input('cell_phone');
         $edit->home_phone = $request->input('home_phone');
         $edit->address = $request->input('address');
@@ -162,16 +178,16 @@ class PlayerController extends Controller
         $edit->ref3_jobtitle = $request->input('ref3_jobtitle');
         $edit->ref3_email = $request->input('ref3_email');
         $edit->ref3_phone = $request->input('ref3_phone');
-        $edit->showcase1 = $request->input('showcase1');
-        $edit->showcase2 = $request->input('showcase2');
-        $edit->showcase3 = $request->input('showcase3');
+        $edit->showcase1 = $showcase1;
+        $edit->showcase2 = $showcase2;
+        $edit->showcase3 = $showcase3;
         $edit->personal_statement = $request->input('personal_statement');
         $edit->commitment = $request->input('commitment');
         $edit->twitter = $request->input('twitter');
         $edit->facebook = $request->input('facebook');
         $edit->instagram = $request->input('instagram');
         if($request->hasFile('profile_image')){
-            $post->profile_image = $fileNameToStore;
+            $edit->profile_image = $fileNameToStore;
         }
         $edit->save();
 

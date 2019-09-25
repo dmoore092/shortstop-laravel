@@ -16,8 +16,10 @@ class CreatePlayersTable extends Migration
         //create the db table structure here
         Schema::create('players', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('profile_image');
+            $table->unsignedBigInteger('user_id');
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                
+            $table->string('profile_image')->default('black.JPG');
             $table->enum('gender', array('Male','Female'))->nullable();
             $table->string('cell_phone')->nullable();
             $table->string('home_phone')->nullable();
@@ -55,7 +57,6 @@ class CreatePlayersTable extends Migration
             $table->string('personal_statement')->nullable();
             $table->string('commitment')->nullable();
             $table->string('service')->nullable();
-            $table->string('role')->nullable();
             $table->string('college')->nullable();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();

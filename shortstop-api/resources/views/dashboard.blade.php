@@ -8,7 +8,7 @@
             {{ session('status') }}
         </div>
     @endif
-    @if($player->role === 'admin')
+    @if($user->role === 'admin')
         @include('includes.admin')
     @else
         <h1 class="display-4">Dashboard</h1>
