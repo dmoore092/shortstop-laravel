@@ -6,7 +6,7 @@
 <div class="jumbotron col-md-7 ml-auto mr-auto">
     <span class="float-right">
         @if(!auth::guest())
-            @if(auth::user()->id == $player->id)
+            @if(auth::user()->id == $player->id || auth::user()->role == 'admin')
                 {!! Form::open(['action' => ['PlayerController@destroy', $player->id], 'method' => 'POST', 'class' => 'btn']) !!}
                     {{Form::hidden('_method', 'DELETE')}}
                     {{Form::submit('DELETE PROFILE', ['class' => 'btn btn-danger'])}}
@@ -22,6 +22,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Player Info</h5>
                     <p class="card-text">
+                        {{-- @if(auth::user()->role == 'admin') --}}
+                        {{Form::label('name', 'Name', array('class' => 'update-label'))}}
+                        {{Form::text('name', $user->name, ['class' => 'form', 'placeholder' => 'Name'])}}
+                        {{-- @endif --}}
                         {{Form::label('gender', 'Gender', array('class' => 'update-label'))}}
                         {{Form::select('gender', array('Male' => 'Male', 'Female' => 'Female'), $player->gender, ['class' => 'form-select'])}}
                         {{Form::label('cell_phone', 'Cell Phone', array('class' => 'update-label'))}}
