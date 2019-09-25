@@ -16,7 +16,7 @@ class PlayerController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth', 'role:admin', ['except' => [
+        // $this->middleware('auth', ['except' => [
         //     'index', 'show'
         // ]]);
     }
@@ -47,6 +47,7 @@ class PlayerController extends Controller
      */
     public function create()
     {
+        $this->middleware('auth');
         //return('test');
         // return view('players.update');
     }
@@ -188,7 +189,10 @@ class PlayerController extends Controller
         if($request->hasFile('profile_image')){
             $edit->profile_image = $fileNameToStore;
         }
-        $edit->save();
+        if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
+            $edit->save();
+        }
+
 
         return redirect()->action('PlayerController@show', ['id'=>$id])->with('success', 'Profile Updated');
     }
@@ -209,16 +213,15 @@ class PlayerController extends Controller
             return redirect('/players')->with('error', 'No Players Found');
         }
 
-         // Check for correct user
-         if(auth()->user()->id !== $player->id){
-            return redirect('/blog')->with('error', 'Unauthorized Page');
+        if(auth()->user()->id == $player->id || auth()->user()->role == 'admin'){
+            $player->delete();
+            $user->delete();
+            if($player->profile_image != 'black.JPG'){
+                // Delete Image
+                Storage::delete('public/profile_images/'.$player->profile_image);
+            }
         }
-        if($player->profile_image != 'black.JPG'){
-            // Delete Image
-            Storage::delete('public/profile_images/'.$player->profile_image);
-        }
-        $player->delete();
-        $user->delete();
+
         return redirect()->action('PlayerController@index')->with('success', 'Profile Deleted');
     }
 }
