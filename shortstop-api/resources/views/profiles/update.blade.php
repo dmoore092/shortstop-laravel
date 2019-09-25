@@ -24,8 +24,6 @@
                     <p class="card-text">
                         {{Form::label('gender', 'Gender', array('class' => 'update-label'))}}
                         {{Form::select('gender', array('Male' => 'Male', 'Female' => 'Female'), $player->gender, ['class' => 'form-select'])}}
-                        {{Form::label('email', 'Email', array('class' => 'update-label'))}}
-                        
                         {{Form::label('cell_phone', 'Cell Phone', array('class' => 'update-label'))}}
                         {{Form::text('cell_phone', $player->cell_phone, ['class' => 'form', 'placeholder' => 'Cell Phone'])}}
                         {{Form::label('home_phone', 'Home Phone', array('class' => 'update-label'))}}

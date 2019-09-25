@@ -109,6 +109,9 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $showcase1 = null;
+        $showcase2 = null;
+        $showcase3 = null;
 
         $this->validate($request, [
             'gender' => 'required',
@@ -127,7 +130,7 @@ class PlayerController extends Controller
             // Upload Image
             $path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
         }
-        
+
         if($request->has('showcase1')){
             if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase1 = $match[1];
