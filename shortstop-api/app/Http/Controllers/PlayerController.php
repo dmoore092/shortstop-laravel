@@ -28,15 +28,15 @@ class PlayerController extends Controller
      */
     public function index()
     {
+
         //this is when arriving at /player with no id set, show all players
         $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id',
                                                                                 'users.name',
                                                                                 'users.role',
                                                                                 'players.profile_image',
                                                                                 'players.sport',
-                                                                                'players.primary_position')->where('users.role','player')->paginate(4);
-        //$users = User::orderBy('id')->paginate(5);
-        //return $players;
+                                                                                'players.primary_position')->where('users.role','player')->paginate(20);
+
         return view('profiles.players')->with('players', $players);
     }
 
@@ -219,7 +219,7 @@ class PlayerController extends Controller
         }
         if($player->profile_image != 'black.JPG'){
             // Delete Image
-            Storage::delete('public/profile_images/'.$post->profile_image);
+            Storage::delete('public/profile_images/'.$player->profile_image);
         }
         $player->delete();
         $user->delete();

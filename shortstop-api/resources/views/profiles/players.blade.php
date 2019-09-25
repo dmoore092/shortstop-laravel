@@ -5,23 +5,19 @@
 @section('content')
 
 <div class="jumbotron col-md-7 ml-auto mr-auto">
-  <h1 class="display-4">Players</h1>
+    <h1 class="display-4">Players</h1>
+        {!! Form::open() !!}
+            {{{Form::label('football', 'Football')}}}
+            {{Form::checkbox('football', 'football', false, array('id'=>'football'))}}
+            {{-- {{Form::submit('DELETE PROFILE', ['class' => 'btn btn-danger'])}} --}}
+        {!! Form::close() !!}
   <p class="lead"></p>
   <hr class="my-4">
-<script>
-
-$(document).ready(function() {
-    alert('test');
-        $('.Football').remove();
-
-});
-
-</script>
     <div class="row d-flex justify-content-around">
         @if(count($players) > 0)
             @foreach($players as $player)
                 @if($player->role == 'player')
-                    <div class="card col-lg-3 {{$player->sport}}"  style="max-width: 15rem;">
+                    <div class="card col-lg-3 mb-4 {{$player->sport}}"  style="max-width: 15rem;">
                         <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
                         <div class="card-body">
                         <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>
