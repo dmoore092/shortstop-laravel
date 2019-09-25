@@ -8,12 +8,20 @@
   <h1 class="display-4">Players</h1>
   <p class="lead"></p>
   <hr class="my-4">
+<script>
 
+$(document).ready(function() {
+    alert('test');
+        $('.Football').remove();
+
+});
+
+</script>
     <div class="row d-flex justify-content-around">
         @if(count($players) > 0)
             @foreach($players as $player)
                 @if($player->role == 'player')
-                    <div class="card col-lg-3  " style="max-width: 15rem;">
+                    <div class="card col-lg-3 {{$player->sport}}"  style="max-width: 15rem;">
                         <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
                         <div class="card-body">
                         <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>

@@ -12,18 +12,21 @@ class PlayerTableSeeder extends Seeder
     public function run()
     {
         DB::table('players')->insert([
-            'user_id' => 1,
             'gender' => 'male'
         ]);
 
         DB::table('players')->insert([
-            'user_id' => 2,
             'gender' => 'male'
         ]);
 
         DB::table('players')->insert([
-            'user_id' => 3,
-            'gender' => 'male'
+            'gender' => 'male',
+            'sport' => 'Basketball'
+        ]);
+
+        DB::table('players')->insert([
+            'gender' => 'male',
+            'sport' => 'Football'
         ]);
     }
 }

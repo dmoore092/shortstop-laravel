@@ -82,39 +82,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = new User;
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->password = Hash::make($data['password']);
-        $user->role = 'player';
-        $user->created_at = now();
-        $user->updated_at = now();
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role' => 'player'
+        ]);
 
-        // $user = User::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'password' => Hash::make($data['password']),
-        //     'role' => 'player'
-        // ]);
-
-        $player = new Player;
-
-        $user->create()->associate($player);
-        $user->save();
-
-        $player->profile_image = 'black.JPG';
         // //$userId = $user->id;
-        // Player::create([
-        //     'profile_image' => 'black.JPG',
+        Player::create([
+            'profile_image' => 'black.JPG'
+        ]);
+        
+        return $user;
 
-        // ]);
 
-        $user->create()->save($player);
-        //return $user;
-        // return User::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'password' => Hash::make($data['password']),
-        // ]);
     }
 }
