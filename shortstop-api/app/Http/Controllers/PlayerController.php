@@ -16,9 +16,9 @@ class PlayerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => [
-            'index', 'show'
-        ]]);
+        // $this->middleware('auth', 'role:admin', ['except' => [
+        //     'index', 'show'
+        // ]]);
     }
 
     /**
@@ -85,19 +85,15 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $player = Player::find($id);
-        $user = User::find($id);
-
-        //Check if player exists before deleting
-        if (!isset($player)){
-            return redirect('/players')->with('error', 'No Player Found');
-        }
-
         // Check for correct user
-        if(auth()->user()->id !== $player->id){
-            return redirect('/players')->with('error', 'Unauthorized Page');
+        if(auth()->user()->id == $player->id || auth()->user()->role == 'admin'){
+            $user = User::find($id);
+            return view('profiles.update')->with('player', $player)->with('user', $user);
         }
 
-        return view('profiles.update')->with('player', $player)->with('user', $user);
+        return redirect('/players')->with('error', 'Unauthorized Page');
+
+
     }
 
     /**

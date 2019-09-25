@@ -7,8 +7,8 @@
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
-            @if(auth::user()->id == $player->id)
-            {{-- hide edit button if not your profile --}}
+            @if(auth::user()->id == $player->id or auth::user()->role == 'admin')
+            {{-- hide edit button if not your profile and you aren't an admin --}}
                 <a class="btn btn-secondary" href="/players/{{$player->id}}/edit">Edit</a>
             @endif
         @endif
