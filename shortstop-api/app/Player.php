@@ -17,6 +17,6 @@ class Player extends Model
     ];
 
     public function player(){
-        return $this_>belongsTo('App/User');
+        return $this->belongsTo('App/User');
     }
 }
