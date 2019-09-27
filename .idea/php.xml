@@ -83,6 +83,11 @@
       <path value="$PROJECT_DIR$/shortstop-api/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/shortstop-api/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/shortstop-api/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/shortstop-api/vendor/unisharp/laravel-ckeditor" />
+      <path value="$PROJECT_DIR$/shortstop-api/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/shortstop-api/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/shortstop-api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/shortstop-api/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

@@ -16,9 +16,9 @@ class PlayerController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth', ['except' => [
-        //     'index', 'show'
-        // ]]);
+         $this->middleware('auth', ['except' => [
+             'index', 'show'
+         ]]);
     }
 
     /**
@@ -28,7 +28,6 @@ class PlayerController extends Controller
      */
     public function index()
     {
-
         //this is when arriving at /player with no id set, show all players
         $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id',
                                                                                 'users.name',
@@ -91,10 +90,7 @@ class PlayerController extends Controller
             $user = User::find($id);
             return view('profiles.update')->with('player', $player)->with('user', $user);
         }
-
         return redirect('/players')->with('error', 'Unauthorized Page');
-
-
     }
 
     /**
@@ -106,6 +102,7 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->middleware('auth');
         $showcase1 = null;
         $showcase2 = null;
         $showcase3 = null;

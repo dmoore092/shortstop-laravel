@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/doctrine/lexer" />
@@ -21,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/monolog/monolog" />
@@ -83,6 +87,7 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/unisharp/laravel-ckeditor" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/webmozart/assert" />
     </content>

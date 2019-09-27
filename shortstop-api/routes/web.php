@@ -17,7 +17,7 @@ Route::get('/about', "PagesController@about");
 //Route::get('/blog', 'PagesController@blog');
 
 Route::resource('blog' ,'BlogController');
-Route::resource('players' ,'PlayerController')->middleware('auth', 'role');
+Route::resource('players' ,'PlayerController');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);

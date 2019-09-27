@@ -13,7 +13,7 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="blog" role="tabpanel" aria-labelledby="home-tab">Post a blog</div>
+        <div class="tab-pane fade show active" id="blog" role="tabpanel" aria-labelledby="home-tab">@include('includes.post_blog')</div>
         <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="profile-tab">Edit site content</div>
         <div class="tab-pane fade" id="development" role="tabpanel" aria-labelledby="contact-tab">pay for web development</div>
       </div>
