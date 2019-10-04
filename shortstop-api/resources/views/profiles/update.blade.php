@@ -73,6 +73,8 @@
                         {{Form::text('sat', $user->sat, ['class' => 'form', 'placeholder' => 'SAT'])}}
                         {{Form::label('act', 'ACT', array('class' => 'update-label'))}}
                         {{Form::text('act', $user->act, ['class' => 'form', 'placeholder' => 'ACT'])}}
+                        {{Form::label('profile_image', 'Profile Image', array('class' => 'update-label'))}}
+                        {{Form::file('image')}}
                     </p>
                 </div> {{-- end of card-body --}}
             </div>{{-- end of card --}}
