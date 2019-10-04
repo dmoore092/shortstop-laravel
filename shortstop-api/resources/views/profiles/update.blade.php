@@ -73,7 +73,7 @@
                         {{Form::label('act', 'ACT', array('class' => 'update-label'))}}
                         {{Form::text('act', $user->act, ['class' => 'form', 'placeholder' => 'ACT'])}}
                         {{Form::label('profile_image', 'Profile Image', array('class' => 'update-label'))}}
-                        {{Form::file('profile_name')}}
+                        {{Form::file('profile_image')}}
                     </p>
                 </div> {{-- end of card-body --}}
             </div>{{-- end of card --}}

@@ -108,9 +108,8 @@ class PlayerController extends Controller
         $this->validate($request, [
             'gender' => 'required',
         ]);
-
-         // Handle File Upload
-         if($request->hasFile('profile_image')){
+         //Handle File Upload
+         if($request->file('profile_image')){
             // Get filename with the extension
             $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
             // Get just filename
@@ -119,7 +118,7 @@ class PlayerController extends Controller
             $extension = $request->file('profile_image')->getClientOriginalExtension();
             // Filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-             //return dd($request);
+             return dd($request->file('profile_image'));
             // Upload Image
             //$path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
         }
@@ -187,8 +186,9 @@ class PlayerController extends Controller
             $edit->profile_image = $request->profile_image;
         }
         if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
-            return dd($request);
-            Storage::disk('s3')->put('images/userimages', $fileNameToStore);
+            return dd($fileNameToStore);
+            Storage::disk('s3')->put('images/userimages/'.$fileNameToStore, $request->file('profile_image'), 'public');
+//            Storage::disk('s3')->put('directory_name/'.$user->id, $request->file('file_name'), 'public');
             $edit->save();
         }
 
