@@ -14,7 +14,7 @@
             @endif
         @endif
     </span>
-    {!! Form::open(['action' => ['PlayerController@update', $user->id], 'method' => 'POST']) !!}
+    {!! Form::open(['action' => ['PlayerController@update', $user->id], 'method' => 'POST', 'files'=>'true']) !!}
     <h1 class="display-4">Edit Profile</h1>
     <div class="row">
         <div class="col-sm-6">

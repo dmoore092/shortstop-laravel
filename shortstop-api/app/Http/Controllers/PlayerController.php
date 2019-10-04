@@ -9,6 +9,7 @@ use Cohensive\Embed\Facades\Embed;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
+use League\Flysystem\FileNotFoundException;
 
 class PlayerController extends Controller
 {
@@ -70,6 +71,7 @@ class PlayerController extends Controller
     {
         // shows specific player
         $user = User::find($id);
+        //$url = Storage::url($user->profile_image);
         return view('profiles.player')->with('user', $user);
     }
 
@@ -108,8 +110,9 @@ class PlayerController extends Controller
         $this->validate($request, [
             'gender' => 'required',
         ]);
+
          //Handle File Upload
-         if($request->file('profile_image')){
+         if($request->hasFile('profile_image')){
             // Get filename with the extension
             $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
             // Get just filename
@@ -118,7 +121,7 @@ class PlayerController extends Controller
             $extension = $request->file('profile_image')->getClientOriginalExtension();
             // Filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-             return dd($request->file('profile_image'));
+            //return dd($fileNameToStore);
             // Upload Image
             //$path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
         }
@@ -183,12 +186,13 @@ class PlayerController extends Controller
         $edit->instagram = $request->input('instagram');
         if($request->hasFile('profile_image')){
 //            $edit->profile_image = $fileNameToStore;
-            $edit->profile_image = $request->profile_image;
+            $edit->profile_image = $fileNameToStore;
         }
         if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
-            return dd($fileNameToStore);
-            Storage::disk('s3')->put('images/userimages/'.$fileNameToStore, $request->file('profile_image'), 'public');
-//            Storage::disk('s3')->put('directory_name/'.$user->id, $request->file('file_name'), 'public');
+            //return dd($fileNameToStore);
+
+            $url = Storage::disk('s3')->put('images/userimages', $request->file('profile_image'), 'public');
+            $edit->profile_image = $url;
             $edit->save();
         }
 

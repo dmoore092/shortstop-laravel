@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-text">
-                            <img src="/images/{{$user->profile_image}}" cclass="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
+                            <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
                         </p>
                     </div>
                 </div>
