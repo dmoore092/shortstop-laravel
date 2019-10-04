@@ -67,11 +67,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'registration_code.in' => 'Please email kprestano@athleticprospects.com for the correct registration code',
+        ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'registration_code' => ['required', 'string', 'max:255', 'in:Elite Prospects'],
+        ], $messages);
+
     }
 
     /**
@@ -89,11 +94,11 @@ class RegisterController extends Controller
             'role' => 'player'
         ]);
 
-        // //$userId = $user->id;
-        Player::create([
-            'profile_image' => 'black.JPG'
-        ]);
-        
+//        // //$userId = $user->id;
+//        Player::create([
+//            'profile_image' => 'black.JPG'
+//        ]);
+
         return $user;
 
 
