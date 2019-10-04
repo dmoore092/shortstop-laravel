@@ -13,10 +13,10 @@ class Player extends Model
      * @var array
      */
     protected $fillable = [
-        'email', 'profile_image',
+        'email', 'profile_image', 'user_id'
     ];
 
-    public function player(){
-        return $this->belongsTo('App/User');
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

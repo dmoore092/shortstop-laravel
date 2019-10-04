@@ -29,14 +29,9 @@ class PlayerController extends Controller
     public function index()
     {
         //this is when arriving at /player with no id set, show all players
-        $players = Player::join('users', 'users.id', '=', 'players.id')->select('users.id',
-                                                                                'users.name',
-                                                                                'users.role',
-                                                                                'players.profile_image',
-                                                                                'players.sport',
-                                                                                'players.primary_position')->where('users.role','player')->paginate(20);
+        $users = User::where('users.role','player')->paginate(20);
 
-        return view('profiles.players')->with('players', $players);
+        return view('profiles.players')->with('players', $users);
     }
 
     /**
@@ -71,9 +66,8 @@ class PlayerController extends Controller
     public function show($id)
     {
         // shows specific player
-        $player = Player::find($id);
         $user = User::find($id);
-        return view('profiles.player')->with('player', $player)->with('user', $user);
+        return view('profiles.player')->with('user', $user);
     }
 
     /**
@@ -84,11 +78,10 @@ class PlayerController extends Controller
      */
     public function edit($id)
     {
-        $player = Player::find($id);
+        $user = User::find($id);
         // Check for correct user
-        if(auth()->user()->id == $player->id || auth()->user()->role == 'admin'){
-            $user = User::find($id);
-            return view('profiles.update')->with('player', $player)->with('user', $user);
+        if(auth()->user() || auth()->user()->role == 'admin'){
+            return view('profiles.update')->with('user', $user);
         }
         return redirect('/players')->with('error', 'Unauthorized Page');
     }

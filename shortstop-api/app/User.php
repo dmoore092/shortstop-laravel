@@ -37,7 +37,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function players(){
-        return $this->hasOne('App\Player');
+    public function player(){
+        return $this->hasOne(Player::class);
     }
 }

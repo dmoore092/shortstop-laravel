@@ -94,11 +94,6 @@ class RegisterController extends Controller
             'role' => 'player'
         ]);
 
-//        // //$userId = $user->id;
-//        Player::create([
-//            'profile_image' => 'black.JPG'
-//        ]);
-
         return $user;
 
 
