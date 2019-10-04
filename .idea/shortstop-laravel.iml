@@ -31,6 +31,7 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/league/flysystem-aws-s3-v3" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/league/flysystem-cached-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/mtdowling/jmespath.php" />
@@ -54,6 +55,7 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/psr/log" />

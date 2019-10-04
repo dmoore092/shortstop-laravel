@@ -58,13 +58,12 @@
                         {{Form::text('highschool', $user->highschool, ['class' => 'form', 'placeholder' => 'Highschool'])}}
                         {{Form::label('weight', 'Weight', array('class' => 'update-label'))}}
                         {{Form::text('weight', $user->weight, ['class' => 'form', 'placeholder' => 'Weight'])}}
-                        <div>
+                        <span>
                             {{Form::label('height', 'Height', array('class' => 'update-label float-left height-labels'))}}
                             {{Form::selectRange('height_feet', 4, 7, $user->height_feet, ['class' => 'form-range'])}}
                             {{-- {{Form::label('height_inches', '', array('class' => 'update-label float-right height-labels'))}} --}}
                             {{Form::selectRange('height_inches', 0, 11, $user->height_inches, ['class' => 'form-range'])}}
-                        </div>
-
+                        </span>
                         {{Form::label('grad_year', 'Class Of', array('class' => 'update-label'))}}
                         {{Form::text('grad_year', $user->grad_year, ['class' => 'form', 'placeholder' => 'Class Of'])}}
                         {{Form::label('gpa', 'GPA', array('class' => 'update-label'))}}
@@ -74,7 +73,7 @@
                         {{Form::label('act', 'ACT', array('class' => 'update-label'))}}
                         {{Form::text('act', $user->act, ['class' => 'form', 'placeholder' => 'ACT'])}}
                         {{Form::label('profile_image', 'Profile Image', array('class' => 'update-label'))}}
-                        {{Form::file('image')}}
+                        {{Form::file('profile_name')}}
                     </p>
                 </div> {{-- end of card-body --}}
             </div>{{-- end of card --}}
@@ -125,7 +124,7 @@
             <div class="card mb-5">
                 <div class="card-body">
                     <h5 class="card-title">References</h5>
-                    <p class="card-text">
+                    <span class="card-text">
                         {{Form::label('ref1_name', 'Reference 1 Name', array('class' => 'update-label'))}}
                         {{Form::text('ref1_name', $user->ref1_name, ['class' => 'form', 'placeholder' => 'Name'])}}
                         {{Form::label('ref1_jobtitle', 'Reference 1 Job Title', array('class' => 'update-label'))}}
@@ -134,7 +133,7 @@
                         {{Form::text('ref1_email', $user->ref1_email, ['class' => 'form', 'placeholder' => 'Email'])}}
                         {{Form::label('ref1_phone', 'Reference 1 Phone', array('class' => 'update-label'))}}
                         {{Form::text('ref1_phone', $user->ref1_phone, ['class' => 'form', 'placeholder' => 'Phone'])}}
-                        <hr>
+                        <hr/>
                         {{Form::label('ref2_name', 'Reference 2 Name', array('class' => 'update-label'))}}
                         {{Form::text('ref2_name', $user->ref2_name, ['class' => 'form', 'placeholder' => 'Name'])}}
                         {{Form::label('ref2_jobtitle', 'Reference 2 Job Title', array('class' => 'update-label'))}}
@@ -143,7 +142,7 @@
                         {{Form::text('ref2_email', $user->ref2_email, ['class' => 'form', 'placeholder' => 'Email'])}}
                         {{Form::label('ref2_phone', 'Reference 2 Phone', array('class' => 'update-label'))}}
                         {{Form::text('ref2_phone', $user->ref2_phone, ['class' => 'form', 'placeholder' => 'Phone'])}}
-                        <hr>
+                        <hr/>
                         {{Form::label('ref3_name', 'Reference 3 Name', array('class' => 'update-label'))}}
                         {{Form::text('ref3_name', $user->ref3_name, ['class' => 'form', 'placeholder' => 'Name'])}}
                         {{Form::label('ref3_jobtitle', 'Reference 3 Job Title', array('class' => 'update-label'))}}
@@ -152,7 +151,7 @@
                         {{Form::text('ref3_email', $user->ref3_email, ['class' => 'form', 'placeholder' => 'Email'])}}
                         {{Form::label('ref3_phone', 'Reference 3 Phone', array('class' => 'update-label'))}}
                         {{Form::text('ref3_phone', $user->ref3_phone, ['class' => 'form', 'placeholder' => 'Phone'])}}
-                    </p>
+                    </span>
                 </div>{{-- end of card-body --}}
             </div>{{-- end of card --}}
         </div>{{-- end of column --}}

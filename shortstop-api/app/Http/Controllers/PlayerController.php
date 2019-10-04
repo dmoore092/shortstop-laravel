@@ -118,9 +118,10 @@ class PlayerController extends Controller
             // Get just ext
             $extension = $request->file('profile_image')->getClientOriginalExtension();
             // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+             //return dd($request);
             // Upload Image
-            $path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
+            //$path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
         }
 
         if($request->has('showcase1')){
@@ -183,11 +184,11 @@ class PlayerController extends Controller
         $edit->instagram = $request->input('instagram');
         if($request->hasFile('profile_image')){
 //            $edit->profile_image = $fileNameToStore;
-//            $edit->profile_image = $path;
+            $edit->profile_image = $request->profile_image;
         }
         if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
-
-            Storage::disk('s3')->put('images/originals', $fileNameToStore);
+            return dd($request);
+            Storage::disk('s3')->put('images/userimages', $fileNameToStore);
             $edit->save();
         }
 
