@@ -105,26 +105,13 @@ class PlayerController extends Controller
         $showcase1 = null;
         $showcase2 = null;
         $showcase3 = null;
-        $fileNameToStore = '';
 
         $this->validate($request, [
             'gender' => 'required',
+            'sport' => 'required',
+            'cell_phone' => 'required|digits:10',
+            'home_phone' => 'required|digits:10',
         ]);
-
-         //Handle File Upload
-         if($request->hasFile('profile_image')){
-            // Get filename with the extension
-            $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('profile_image')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //return dd($fileNameToStore);
-            // Upload Image
-            //$path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStore);
-        }
 
         if($request->has('showcase1')){
             if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
@@ -184,15 +171,24 @@ class PlayerController extends Controller
         $edit->twitter = $request->input('twitter');
         $edit->facebook = $request->input('facebook');
         $edit->instagram = $request->input('instagram');
-        if($request->hasFile('profile_image')){
-//            $edit->profile_image = $fileNameToStore;
-            $edit->profile_image = $fileNameToStore;
-        }
-        if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
-            //return dd($fileNameToStore);
 
-            $url = Storage::disk('s3')->put('images/userimages', $request->file('profile_image'), 'public');
-            $edit->profile_image = $url;
+        if(auth()->user()->id == $edit->id || auth()->user()->role == 'admin'){
+
+            if($request->hasFile('profile_image')){
+                //find current profile image from db
+                $oldUrl = User::find($id)->pluck('profile_image');
+
+                //upload new file to s3
+                $url = Storage::disk('s3')->put('images/userimages', $request->file('profile_image'), 'public');
+
+                //delete old image from s3
+                Storage::disk('s3')->delete($oldUrl[0]);
+
+                //save image path to request
+                $edit->profile_image = $url;
+            }
+
+            //save all altered fields to db
             $edit->save();
         }
 

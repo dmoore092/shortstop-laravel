@@ -4,6 +4,8 @@
 @section('content')
 
 <div class="jumbotron col-md-7 ml-auto mr-auto">
+    <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
+    <script src="{{ asset('js/inputmasking.js')}}"></script>
     <span class="float-right">
         @if(!auth::guest())
             @if(auth::user()->id == $user->id || auth::user()->role == 'admin')
@@ -29,7 +31,7 @@
                         {{Form::label('gender', 'Gender', array('class' => 'update-label'))}}
                         {{Form::select('gender', array('Male' => 'Male', 'Female' => 'Female'), $user->gender, ['class' => 'form-select'])}}
                         {{Form::label('cell_phone', 'Cell Phone', array('class' => 'update-label'))}}
-                        {{Form::text('cell_phone', $user->cell_phone, ['class' => 'form', 'placeholder' => 'Cell Phone'])}}
+                        {{Form::text('cell_phone', $user->cell_phone, ['class' => 'form', 'id' => 'cell_phone', 'placeholder' => 'Cell Phone'])}}
                         {{Form::label('home_phone', 'Home Phone', array('class' => 'update-label'))}}
                         {{Form::text('home_phone', $user->home_phone, ['class' => 'form', 'placeholder' => 'Home Phone'])}}
                         {{Form::label('address', 'Address', array('class' => 'update-label'))}}
