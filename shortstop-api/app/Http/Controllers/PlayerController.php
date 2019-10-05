@@ -109,8 +109,20 @@ class PlayerController extends Controller
         $this->validate($request, [
             'gender' => 'required',
             'sport' => 'required',
-            'cell_phone' => 'required|digits:10',
-            'home_phone' => 'required|digits:10',
+            'cell_phone' => 'required',
+            'home_phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'highschool' => 'required',
+            'weight' => 'required',
+            'height_feet' => 'required',
+            'height_inches' => 'required',
+            'grad_year' => 'required',
+            'gpa' => 'required',
+            'primary_position' => 'required',
+
         ]);
 
         if($request->has('showcase1')){

@@ -86,7 +86,13 @@
                     <h5 class="card-title">Sport Info</h5>
                     <p class="card-text">
                         {{Form::label('sport', 'Sport', array('class' => 'update-label'))}}
-                        {{Form::text('sport', $user->sport, ['class' => 'form', 'placeholder' => 'Sport'])}}
+                        {{Form::select('sport', array('Baseball' => 'Baseball', 'Football' => 'Football', 'Basketball' => 'Basketball',
+                                                      'Softball' => 'Softball', 'Hockey' => 'Hockey', 'Field Hockey' => 'Field Hockey',
+                                                      'Lacrosse' => 'Lacrosse', 'Soccer' => 'Soccer', 'Track and Field' => 'Track and Field',
+                                                       'Volleyball' => 'Volleyball', 'Wrestling' => 'Wrestling', 'Tennis' => 'Tennis',
+                                                       'Swimming' => 'Swimming', 'Golf' => 'Golf', 'Gymnastics' => 'Gymnastics', 'Cheerleading' => 'Cheerleading',
+                                                        'Esports' => 'Esports'),$user->sport, ['class' => 'form-select'])}}
+
                         {{Form::label('primary_position', 'Primary Position', array('class' => 'update-label'))}}
                         {{Form::text('primary_position', $user->primary_position, ['class' => 'form', 'placeholder' => 'Primary Position'])}}
                         {{Form::label('secondary_position', 'Secondary Position', array('class' => 'update-label'))}}
