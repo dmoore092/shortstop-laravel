@@ -1,2 +1,1 @@
 # shortstop-laravel
-#edit
