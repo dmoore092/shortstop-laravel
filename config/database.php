@@ -4,15 +4,6 @@ use Illuminate\Support\Str;
 
 $DATABASE_URL = parse_url('mysql://i934dudnxi24ht9i:qbnaa4iga89ajsgo@wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/opjdazfdkmwv816r');
 
-if(getenv('DATABASE_URL')) {
-    $url = parse_url(getenv('DATABASE_URL'));
-
-    putenv('DB_HOST='.$url['host']);
-    putenv('DB_PORT='.$url['port']);
-    putenv('DB_USERNAME='.$url['user']);
-    putenv('DB_DATABASE='.substr($url["path"], 1));
-    putenv('DB_PASSWORD='.$url['pass']);
-}
 
 return [
 
@@ -58,11 +49,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'mysql://i934dudnxi24ht9i:qbnaa4iga89ajsgo@wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'opjdazfdkmwv816r'),
-            'password' => env('DB_PASSWORD', 'qbnaa4iga89ajsgo '),
+            'host' => env('wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', '127.0.0.1'),
+            'port' => env('3306', '3306'),
+            'database' => env('opjdazfdkmwv816r', 'forge'),
+            'username' => env('i934dudnxi24ht9i', 'opjdazfdkmwv816r'),
+            'password' => env('qbnaa4iga89ajsgo', 'qbnaa4iga89ajsgo '),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -73,7 +64,25 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
-        ],
+//        ],        'mysql' => [
+//            'driver' => 'mysql',
+//            'url' => env('DATABASE_URL'),
+//            'host' => env('DB_HOST', '127.0.0.1'),
+//            'port' => env('DB_PORT', '3306'),
+//            'database' => env('DB_DATABASE', 'forge'),
+//            'username' => env('DB_USERNAME', 'opjdazfdkmwv816r'),
+//            'password' => env('DB_PASSWORD', 'qbnaa4iga89ajsgo '),
+//            'unix_socket' => env('DB_SOCKET', ''),
+//            'charset' => 'utf8mb4',
+//            'collation' => 'utf8mb4_unicode_ci',
+//            'prefix' => '',
+//            'prefix_indexes' => true,
+//            'strict' => true,
+//            'engine' => null,
+//            'options' => extension_loaded('pdo_mysql') ? array_filter([
+//                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+//            ]) : [],
+//        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
