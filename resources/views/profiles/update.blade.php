@@ -92,7 +92,6 @@
                                                        'Volleyball' => 'Volleyball', 'Wrestling' => 'Wrestling', 'Tennis' => 'Tennis',
                                                        'Swimming' => 'Swimming', 'Golf' => 'Golf', 'Gymnastics' => 'Gymnastics', 'Cheerleading' => 'Cheerleading',
                                                         'Esports' => 'Esports'),$user->sport, ['class' => 'form-select'])}}
-                        {{Form::text('sport', $user->sport, ['class' => 'form', 'placeholder' => 'Sport'])}}
                         {{Form::label('primary_position', 'Primary Position', array('class' => 'update-label'))}}
                         {{Form::text('primary_position', $user->primary_position, ['class' => 'form', 'placeholder' => 'Primary Position'])}}
                         {{Form::label('secondary_position', 'Secondary Position', array('class' => 'update-label'))}}
