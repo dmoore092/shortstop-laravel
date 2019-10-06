@@ -181,8 +181,10 @@ class PlayerController extends Controller
                 //upload new file to s3
                 $url = Storage::disk('s3')->put('images/userimages', $request->file('profile_image'), 'public');
 
-                //delete old image from s3
-                Storage::disk('s3')->delete($oldUrl[0]);
+                if($oldUrl[0] !== 'black.JPG'){
+                    //delete old image from s3
+                    Storage::disk('s3')->delete($oldUrl[0]);
+                }
 
                 //save image path to request
                 $edit->profile_image = $url;
