@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 $DATABASE_URL = parse_url('mysql://i934dudnxi24ht9i:qbnaa4iga89ajsgo@wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/opjdazfdkmwv816r');
 
 if(getenv('DATABASE_URL')) {
-    $url = parse_url(getenv('SQL_URL'));
+    $url = parse_url(getenv('DATABASE_URL'));
 
     putenv('DB_HOST='.$url['host']);
     putenv('DB_PORT='.$url['port']);
