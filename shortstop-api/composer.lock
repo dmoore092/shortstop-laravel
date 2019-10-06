@@ -1,23 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9df6e85a26d6ea35177227265db74cc5",
+    "content-hash": "10396035fc59d1ab73141dfd3927b689",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.14",
+            "version": "3.112.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "491960b26d7c02d8d9c9c998646d25a99e10fd16"
+                "reference": "ccbfadde0ea60c5396e0408711a927200cb1898c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/491960b26d7c02d8d9c9c998646d25a99e10fd16",
-                "reference": "491960b26d7c02d8d9c9c998646d25a99e10fd16",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ccbfadde0ea60c5396e0408711a927200cb1898c",
+                "reference": "ccbfadde0ea60c5396e0408711a927200cb1898c",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-10-03T18:12:08+00:00"
+            "time": "2019-10-04T18:08:52+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -422,28 +422,30 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e17f069ede36f7534b95adec71910ed1b49c74ea",
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5"
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan": "^0.11.8",
+                "phpunit/phpunit": "^8.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -457,12 +459,12 @@
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Johannes Schmitt",
@@ -478,7 +480,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-06-08T11:03:04+00:00"
+            "time": "2019-07-30T19:33:28+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -1559,16 +1561,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.25.0",
+            "version": "2.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b70da677101cca7b584c7489770d2677c2733593"
+                "reference": "d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b70da677101cca7b584c7489770d2677c2733593",
-                "reference": "b70da677101cca7b584c7489770d2677c2733593",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1",
+                "reference": "d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1",
                 "shasum": ""
             },
             "require": {
@@ -1622,7 +1624,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-09-30T16:22:22+00:00"
+            "time": "2019-10-05T15:52:23+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -5632,7 +5634,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1.3"
+        "php": ">=7.2.19"
     },
     "platform-dev": []
 }
