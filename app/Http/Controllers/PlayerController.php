@@ -35,7 +35,7 @@ class PlayerController extends Controller
         //this is when arriving at /player with no id set, show all players
         $users = User::where('users.role','player')->paginate(20);
 
-        return view('profiles.players')->with('players', $users);
+        return view('profiles.players')->with('users', $users);
     }
 
     /**
@@ -116,6 +116,7 @@ class PlayerController extends Controller
         if($request->has('showcase1')){
             if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase1 = $match[1];
+//                return dd($showcase1);
             }
         }
 
@@ -206,20 +207,18 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        $player = Player::find($id);
         $user = User::find($id);
 
         //Check if post exists before deleting
-        if (!isset($player)){
+        if (!isset($user)){
             return redirect('/players')->with('error', 'No Players Found');
         }
 
-        if(auth()->user()->id == $player->id || auth()->user()->role == 'admin'){
-            $player->delete();
+        if(auth()->user()->id == $user->id || auth()->user()->role == 'admin'){
             $user->delete();
-            if($player->profile_image != 'black.JPG'){
+            if($user->profile_image != 'black.JPG'){
                 // Delete Image
-                Storage::delete('public/profile_images/'.$player->profile_image);
+                Storage::disk('s3')->delete($oldUrl[0]);
             }
         }
 

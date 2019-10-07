@@ -14,22 +14,24 @@
   <p class="lead"></p>
   <hr class="my-4">
     <div class="row d-flex justify-content-around">
-        @if(count($players) > 0)
-            @foreach($players as $player)
-                @if($player->role == 'player')
-                    <div class="card col-lg-3 mb-4 {{$player->sport}}"  style="max-width: 15rem;">
-                        <img src="/images/{{$player->profile_image}}" class="card-img" alt="Player Profile Image">
-                        <div class="card-body">
-                        <h5 class="card-title"><a href="/players/{{$player->id}}">{{ $player->name }}</a></h5>
-                            <p class="card-text">
-                                Sport: {{$player->sport}}
-                                <br>
-                                Position: {{$player->primary_position}}
-                                <br>
-                                <p class="card-text">{{$player->commitment}}</p>
-                            </p>
+        @if(count($users) > 0)
+            @foreach($users as $user)
+                @if($user->role == 'player')
+                    <a href="/players/{{$user->id}}" style="text-decoration: none !important;">
+                        <div class="card col-lg-3 mb-4 {{$user->sport}}"  style="max-width: 15rem;">
+                            <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="card-img" alt="Player Profile Image">
+                            <div class="card-body">
+                            <h5 class="card-title">{{ $user->name }}</h5>
+                                <p class="card-text">
+                                    Sport: {{$user->sport}}
+                                    <br/>
+                                    Position: {{$user->primary_position}}
+                                    <br/>
+                                    <p class="card-text">Commitment: {{$user->commitment}}</p>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endif
             @endforeach
         @else
@@ -38,7 +40,7 @@
     </div>
 
   <hr class="my-4">
-  {{$players->links()}}
+  {{$users->links()}}
   @include('includes.footer')
 
 </div>

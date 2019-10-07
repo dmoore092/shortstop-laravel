@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Profile')
 
 @section('content')
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-lg-10 ml-auto mr-auto">
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
@@ -70,7 +70,7 @@
         <br>
         <small>When you become committed to a college, please send us an email at <a href="mailto:kprestano@athleticprospects.com">kprestano@athleticprospects.com</a> </small>
     </div>
-    @if($user->showcase1 !== null || $user->showcase2 !== null || $user->showcase3 !== null)
+    @if($user->showcase1 !== null && $user->showcase2 !== null && $user->showcase3 !== null)
     <hr>
     <div>
         <h4>Videos</h4>
@@ -78,21 +78,21 @@
             @if($user->showcase1 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' src="{{$user->showcase2}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase2}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' src="{{$user->showcase3}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase3}}"></iframe>
                     </div>
                 </div>
             @endif
