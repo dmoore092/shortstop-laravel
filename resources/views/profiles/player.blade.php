@@ -78,21 +78,21 @@
             @if($user->showcase1 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/watch?v={{$user->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase2}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/watch?v={{$user->showcase2}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
                 <div class="col-sm-4">
                     <div class="card">
-                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase3}}"></iframe>
+                        <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/watch?v={{$user->showcase3}}"></iframe>
                     </div>
                 </div>
             @endif
