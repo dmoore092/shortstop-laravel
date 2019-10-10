@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Player;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -70,11 +71,12 @@ class RegisterController extends Controller
         $messages = [
             'registration_code.in' => 'Please email kprestano@athleticprospects.com for the correct registration code',
         ];
+        $registrationCode = strtolower($data['registration_code']);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'registration_code' => ['required', 'string', 'max:255', 'in:Elite Prospects'],
+            'registration_code' => ['required', 'string', 'max:255', Rule::in(['Elite Prospects', 'elite prospects'])],
         ], $messages);
 
     }
@@ -83,7 +85,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {

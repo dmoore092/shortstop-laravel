@@ -17,27 +17,31 @@
         @if(count($users) > 0)
             @foreach($users as $user)
                 @if($user->role == 'player')
-                    <a href="/players/{{$user->id}}" style="text-decoration: none !important;">
-                        <div class="card mb-3 {{$user->sport}} col-sm-12 col-md-6">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="card-img ml-3 mt-4" alt="Player Profile Image">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body ml-3">
-                                        <h5 class="card-title">{{ $user->name }}</h5>
-                                        <p class="card-text">
-                                            Sport: {{$user->sport}}
-                                            <br/>
-                                            Position: {{$user->primary_position}}
-                                            <br/>
-                                        <p class="card-text">Commitment: {{$user->commitment}}</p>
-                                        </p>
+                    <div class="container">
+                        <a href="/players/{{$user->id}}" style="text-decoration: none !important;">
+                            <div class="card mb-3 {{$user->sport}} col-sm-12 col-md-6">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" style="min-width:150px;max-width: 260px;" class="card-img ml-3 mt-4" alt="Player Profile Image">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body ml-3">
+                                            <h5 class="card-title">{{ $user->name }}</h5>
+                                            <p class="card-text">
+                                                Sport: {{$user->sport}}
+                                                <br/>
+                                                Position: {{$user->primary_position}}
+                                                <br/>
+                                            </p>
+                                            @if($user->commitment !== '')
+                                                <p class="card-text">Commitment: {{$user->commitment}}</p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 @endif
             @endforeach
         @else
