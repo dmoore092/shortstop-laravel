@@ -7,7 +7,7 @@
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
-            @if(auth::user() or auth::user()->role == 'admin')
+            @if(auth::user()->id == $user->id or auth::user()->role == 'admin')
             {{-- hide edit button if not your profile and you aren't an admin --}}
                 <a class="btn btn-secondary" href="/players/{{$user->id}}/edit">Edit</a>
             @endif
@@ -18,17 +18,11 @@
     <h2 class="display-5"></h2>
     <div>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">
-                            <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
-                        </p>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-md-3">
+                <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
+                <p><a href="#" class="pl-3">Report this profile</a></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Player Info</h5>
@@ -48,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Sport Info</h5>
@@ -76,21 +70,21 @@
         <h4>Videos</h4>
         <div class="row">
             @if($user->showcase1 !== null)
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase2}}"></iframe>
                     </div>
                 </div>
             @endif
             @if($user->showcase2 !== null)
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase3}}"></iframe>
                     </div>
@@ -105,7 +99,7 @@
         <h4>References</h4>
         <div class="row">
             @if($user->ref1_name !== null)
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-header">{{$user->ref1_name}}</div>
                     <div class="card-body">
@@ -117,7 +111,7 @@
             </div>
             @endif
             @if($user->ref2_name !== null)
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-header">{{$user->ref2_name}}</div>
                     <div class="card-body">
@@ -129,7 +123,7 @@
             </div>
             @endif
             @if($user->ref3_name !== null)
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-header">{{$user->ref3_name}}</div>
                     <div class="card-body">
