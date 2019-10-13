@@ -22,4 +22,7 @@ $(document).ready(function(){
             .search( this.value )
             .draw();
     } );
+
+    //cdeditor
+    CKEDITOR.replace( 'summary-ckeditor' );
 });

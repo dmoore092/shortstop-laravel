@@ -17,7 +17,7 @@ class CreateHomeinfoTable extends Migration
             $table->bigIncrements('id');
             $table->string('header', '1000')->default('At Athletic Prospects');
             $table->string('text', '1000')->default('We strive to provide High School and JUCO athletes the tools to successfully promote themselves to college coaches by assisting athletes through the recruiting process. Our goal is to be a mentor-leader to athletes to teach them the importance of academics and athletics while showing strong leadership characteristics to be successful on and off the field.');
-            $table->string('edited_by');
+            $table->string('edited_by')->default('Keith Prestano');
             $table->timestamps();
         });
     }

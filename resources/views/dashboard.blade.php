@@ -3,6 +3,7 @@
 @section('title', 'Athletic Prospects | Dashboard')
 @section('content')
 <div class="jumbotron col-md-7 ml-auto mr-auto">
+
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}

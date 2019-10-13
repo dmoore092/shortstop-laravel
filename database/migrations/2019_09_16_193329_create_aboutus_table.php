@@ -17,6 +17,7 @@ class CreateAboutusTable extends Migration
             $table->bigIncrements('id');
             $table->string('header');
             $table->string('text');
+            $table->string('edited_by')->default('Keith Prestano');
             $table->timestamps();
         });
     }
