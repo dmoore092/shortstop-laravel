@@ -5,21 +5,18 @@
 @section('content')
 
 <div class="jumbotron col-md-7 ml-auto mr-auto">
-{{--    <script type="text/javascript" charset="utf8" src="{{ asset('js/DataTables/datatables.min.js')}}"></script>--}}
-    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <h1 class="display-4">Players</h1>
-        {!! Form::open() !!}
-            {{Form::label('search', 'Search', array('class' => 'update-label'))}}
-            {{Form::text('search','', ['class' => 'form', 'id'=>'search','placeholder' => 'Search'])}}
-        {!! Form::close() !!}
-  <p class="lead"></p>
-  <hr class="my-4">
-    <div class="row d-flex justify-content-start">
+    <hr class="my-4">
+    <div class="row  table-responsive">
         @if(count($users) > 0)
-            <table id="players-table" class="table" cellspacing="0" width="100%">
+            <table id="players-table" class="table table-striped table-bordered " cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>School</th>
+                        <th>Sport</th>
+                        <th>Class Of</th>
+                        <th>Position</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +24,19 @@
                 @if($user->role == 'player')
                     <tr>
                         <td>
-                            {{ $user->name }}
+                            <a href="/players/{{$user->id}}" style="text-decoration: none !important;"> {{ $user->name }} </a>
+                        </td>
+                        <td>
+                            {{ $user->highschool }}
+                        </td>
+                        <td>
+                            {{ $user->sport }}
+                        </td>
+                        <td>
+                            {{ $user->grad_year }}
+                        </td>
+                        <td>
+                            {{ $user->primary_position }}
                         </td>
                     </tr>
                 @endif
@@ -42,7 +51,7 @@
   <hr class="my-4">
   {{$users->links()}}
   @include('includes.footer')
-    <script src="{{ asset('js/tablesdata.js') }}"></script>
+
 </div>
 
 @endsection

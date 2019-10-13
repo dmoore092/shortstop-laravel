@@ -4,8 +4,6 @@
 @section('content')
 
 <div class="jumbotron col-md-7 ml-auto mr-auto">
-    <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
-    <script src="{{ asset('js/inputmasking.js')}}"></script>
     <span class="float-right">
         @if(!auth::guest())
             @if(auth::user()->id == $user->id || auth::user()->role == 'admin')

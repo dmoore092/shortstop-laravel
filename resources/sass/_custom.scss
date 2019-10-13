@@ -73,9 +73,12 @@ body{
     background-color: #bb0a1e;
     color: white;
 }
+nav{
+    border-bottom: 2px solid #bb0a1e;
+}
 @media only screen and (min-width: 520px) {
     body{
-        background-image: url("/images/siteBackground.jpg");
-        //  background-position: 50% -55% !important;
+      background-image: url("/images/siteBackground.jpg");
+      background-position: 100px -120px;
     }
 }

@@ -9,11 +9,13 @@
 
     <title>@yield('title')</title>
 
-    {{-- JQuery --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    {{-- JQuery --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,6 +24,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--icon library -->
 
     <meta name="author" content="Dale Moore">
@@ -84,24 +87,24 @@
                 </div>
             </div>
         </nav>
-        <div class="header-search">
-            <div class="container">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col-md-auto col-sm-8">
-                        <form action='results.php' method='POST' id="search-form" class="form-inline">
-                            <div class="form-row">
-                                <div class="col-auto">
-                                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="First or Last Name" name="search">
-                                    <input class="btn btn-default" id="header-search-btn" type="submit" name="search-btn" value="Search">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="header-search">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col"></div>--}}
+{{--                    <div class="col"></div>--}}
+{{--                    <div class="col-md-auto col-sm-8" style="height:45px;">--}}
+{{--                        <form action='results.php' method='POST' id="search-form" class="form-inline">--}}
+{{--                            <div class="form-row">--}}
+{{--                                <div class="col-auto">--}}
+{{--                                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="First or Last Name" name="search">--}}
+{{--                                    <input class="btn btn-default" id="header-search-btn" type="submit" name="search-btn" value="Search">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <main class="py-4">
             <div class="container">
                 <div class="ml-5">
@@ -112,5 +115,6 @@
 
         </main>
     </div>
+    <script src="{{ asset('js/inputmasking.js')}}"></script>
 </body>
 </html>
