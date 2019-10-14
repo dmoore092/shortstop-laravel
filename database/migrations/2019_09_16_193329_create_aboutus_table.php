@@ -16,8 +16,8 @@ class CreateAboutusTable extends Migration
         Schema::create('about_us', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('header');
-            $table->string('text');
-            $table->string('edited_by')->default('Keith Prestano');
+            $table->text('text');
+            $table->string('edited_by');
             $table->timestamps();
         });
     }

@@ -23,6 +23,8 @@ $(document).ready(function(){
             .draw();
     } );
 
-    //cdeditor
-    CKEDITOR.replace( 'summary-ckeditor' );
+    //ckeditor
+    CKEDITOR.replace( 'blog-textarea' );
+    CKEDITOR.replace( 'home-textarea' );
+    CKEDITOR.replace( 'about-textarea' );
 });

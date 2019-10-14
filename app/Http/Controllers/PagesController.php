@@ -11,8 +11,16 @@ class PagesController extends Controller
 {
     public function index(){
         //show homepage with post from db
-        $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
-        return view('pages.home')->with('post', $post);
+        try{
+            $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
+            return view('pages.home')->with('post', $post[0]);
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+
+        }
+//        return dd($post[0]->header);
+        return view('pages.home')->with('post', $post[0]);
+
     }
 
     public function updateHome(Request $request){
@@ -29,8 +37,13 @@ class PagesController extends Controller
 
     public function about(){
         //show about us page with info from db
-        $post = AboutInfo::orderBy('created_at')->limit(1)->get();
-        return view('pages.about')->with('post', $post);
+        try{
+            $post = AboutInfo::orderBy('created_at', 'desc')->limit(1)->get();
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+
+        }
+        return view('pages.about')->with('post', $post[0]);
     }
 
     public function updateAbout(Request $request){
