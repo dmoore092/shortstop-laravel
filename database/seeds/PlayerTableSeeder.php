@@ -11,22 +11,6 @@ class PlayerTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('players')->insert([
-            'gender' => 'male'
-        ]);
-
-        DB::table('players')->insert([
-            'gender' => 'male'
-        ]);
-
-        DB::table('players')->insert([
-            'gender' => 'male',
-            'sport' => 'Basketball'
-        ]);
-
-        DB::table('players')->insert([
-            'gender' => 'male',
-            'sport' => 'Football'
-        ]);
+        //
     }
 }

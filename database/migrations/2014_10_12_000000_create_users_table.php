@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('player');
-            $table->string('profile_image')->default('black.JPG');
+            $table->string('profile_image')->default('images/userimages/0xtBuKzhvYkUc04hY7PnAG1Yyh7ipsENiJg5K1pQ.jpeg');
             $table->enum('gender', array('Male','Female'))->nullable();
             $table->string('cell_phone')->nullable();
             $table->string('home_phone')->nullable();

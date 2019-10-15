@@ -4,7 +4,7 @@
             Post A Blog
         </div>
         <div class="card-body">
-                {{ Form::open(['action' => ['BlogController@create', '3'], 'method' => 'POST']) }}
+                {{ Form::open(['action' => ['BlogController@create'], 'method' => 'POST']) }}
                     {{Form::label('title', 'Title:', array('class' => 'blog-label'))}}
                     {{Form::text('title', null, ['class' => 'form'])}}<br>
                     {{Form::label('tags', 'Tags:', ['class' => 'form'])}}
