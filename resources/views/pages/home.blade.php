@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Home')
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-11 ml-auto mr-auto">
   <h1 class="display-4">{!! html_entity_decode($post->header) !!}</h1>
   <hr class="my-4">
   <p class="lead">{!! html_entity_decode($post->text)!!}</p>
