@@ -10,12 +10,16 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <link href="/css/app.css" rel="stylesheet">
+    <script src="/js/app.js" defer></script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script> --}}
 
     {{-- JQuery --}}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
+    {{-- <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script> --}}
+    <script src="/js/inputmask/dist/jquery.inputmask.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
 
     <!-- Fonts -->
@@ -24,7 +28,8 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--icon library -->
 
