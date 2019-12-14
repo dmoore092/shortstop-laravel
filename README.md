@@ -12,7 +12,7 @@
 
 4. Run `vagrant up`
 
-## With build-in server
+## With built-in server
 1. cd in project folder
 
 2. run `php artisan serve`
