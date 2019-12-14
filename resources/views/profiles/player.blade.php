@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Profile')
 
 @section('content')
-<div class="jumbotron col-lg-10 ml-auto mr-auto">
+<div class="jumbotron col-lg-7 ml-auto mr-auto">
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
