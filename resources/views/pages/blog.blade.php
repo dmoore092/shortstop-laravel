@@ -6,6 +6,7 @@
         <h1 class="display-4">Blog @ Athletic Prospects</h1>
         <p class="lead"></p>
         <hr class="my-4">
+        @include('includes.messages')
         @foreach($posts as $post)
             <div class="card mb-3" style="max-width: 100%;">
                 <div class="row no-gutters">
@@ -24,6 +25,7 @@
             </div>
         <hr class="my-4">
         @endforeach
+        {{$posts->links()}}
     @include('includes.footer')
     </div>
 @endsection

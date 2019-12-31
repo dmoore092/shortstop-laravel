@@ -26,6 +26,10 @@ class PagesController extends Controller
     public function updateHome(Request $request){
         //edit info on homepage
         $this->middleware('admin');
+        $this->validate($request, [
+            'header' => 'required',
+            'text' => 'required',
+        ]);
 
         $post = new HomeInfo;
         $post->header = $request->header;
@@ -49,7 +53,11 @@ class PagesController extends Controller
     public function updateAbout(Request $request){
         //update about us page
         $this->middleware('admin');
-
+        $this->validate($request, [
+            'title' => 'required',
+            'text' => 'required',
+        ]);
+        
         $post = new AboutInfo;
         $post->header = $request->header;
         $post->text = $request->text;

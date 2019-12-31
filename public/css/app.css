@@ -10732,7 +10732,17 @@ body {
 }
 
 nav {
-  border-bottom: 2px solid #bb0a1e;
+  border-bottom: px solid #bb0a1e;
+}
+
+.alert {
+  background-color: #bb0a1e;
+  color: white;
+}
+
+.success {
+  background-color: green;
+  color: white;
 }
 
 @media only screen and (min-width: 520px) {

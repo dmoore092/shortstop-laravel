@@ -22,6 +22,10 @@
 
 9. run `php artisan cache:clear` and `php artisan config:clear`
 
+10. In homestead directory, run `vagrant up`
+
+11. Run `vagrant ssh` to bash into homestead, run `npm run watch` to automatically compile front end assets
+
 ## With built-in server
 1. cd in project folder
 
@@ -34,5 +38,7 @@
 5. run `php artisan cache:clear` and `php artisan config:clear`
 
 6. run `php artisan serve`
+
+7. Run `npm run watch` to automatically compile front end assets
 
 
