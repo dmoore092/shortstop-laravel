@@ -18,7 +18,7 @@
     <h2 class="display-5"></h2>
     <div>
         <div class="row">
-            <div class="col-sm-4 col-md-3">
+            <div class="col-sm-4 col-md-4">
                 <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
                 <p><a href="#" class="pl-3">Report this profile</a></p>
             </div>
@@ -85,21 +85,21 @@
     <div>
         <h4>Videos</h4>
         <div class="row">
-            @if($user->showcase1 !== null)
+            @if($user->showcase1 !== null and $user->showcase1 != "")
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif
-            @if($user->showcase2 !== null)
+            @if($user->showcase2 !== null and $user->showcase2 != "")
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase2}}"></iframe>
                     </div>
                 </div>
             @endif
-            @if($user->showcase2 !== null)
+            @if($user->showcase2 !== null and $user->showcase3 != "")
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase3}}"></iframe>

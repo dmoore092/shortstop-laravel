@@ -46,26 +46,26 @@ class BlogController extends Controller
 
         // Handle image Upload
         if($request->hasFile('image')){
-            $url = Storage::disk('s3')->put('images/blogimages', $request->file('image'), 'public');
+            $blogImageUrl = Storage::disk('s3')->put('images/blogimages', $request->file('image'), 'public');
         } else {
-            $url = '';
+            $blogImageUrl = '';
         }
 
         // Handle podcast Upload
         if($request->hasFile('podcast')){
-            $url = Storage::disk('s3')->put('podcasts', $request->file('podcast'), 'public');
+            $podcastUrl = Storage::disk('s3')->put('podcasts', $request->file('podcast'), 'public');
         } else {
-            $url = '';
+            $podcastUrl = '';
         }
 
         // Create Post
         $post = new Blog;
         $post->title = $request->input('title');
         $post->text = $request->input('text');
-        $post->post_image = $url;
-        $post->podcast = $request->input('podcast');
+        $post->post_image = $blogImageUrl;
+        $post->podcast = $podcastUrl;
         $post->author = User::find(auth()->user()->id)->name;
-        $post->post_image = $url;
+        //$post->post_image = $url;
         $post->save();
 
         return redirect('/blog')->with('success', 'Post Created');
