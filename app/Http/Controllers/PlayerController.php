@@ -33,7 +33,7 @@ class PlayerController extends Controller
     public function index()
     {
         //this is when arriving at /player with no id set, show all players
-        $users = User::where('users.role','player')->paginate(20);
+        $users = User::where('users.role','player')->paginate(200);
 
         return view('profiles.players')->with('users', $users);
     }
@@ -107,10 +107,21 @@ class PlayerController extends Controller
         $showcase3 = null;
 
         $this->validate($request, [
+            'name' => 'required',
             'gender' => 'required',
-            'sport' => 'required',
             'cell_phone' => 'required',
             'home_phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'highschool' => 'required',
+            'weight' => 'required',
+            'height' => 'required',
+            'grad_year' => 'required',
+            'gpa' => 'required',
+            'sport' => 'required',
+            'primary_position' => 'required',
         ]);
 
         if($request->has('showcase1')){
@@ -121,13 +132,13 @@ class PlayerController extends Controller
         }
 
         if($request->has('showcase2')){
-            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase2'), $match)){
                 $showcase2 = $match[1];
             }
         }
 
         if($request->has('showcase3')){
-            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase3'), $match)){
                 $showcase3 = $match[1];
             }
         }

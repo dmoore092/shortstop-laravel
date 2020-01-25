@@ -16,7 +16,7 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="/images/{{$user->profile_image}}" class="card-img" alt="Player Profile Image">
+                    <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="card-img" alt="Player Profile Image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
