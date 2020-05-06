@@ -9719,10 +9719,35 @@ h3 {
   }
 }
 body {
-  background-image: url("/images/siteBackgroundSmall.jpg");
-  background-repeat: no-repeat;
-  background-color: black;
   font-family: "Merriweather", serif;
+}
+
+.logo-home{
+  height: 130px;
+  overflow: visible;
+  position: relative;
+}
+.logo{
+  position: absolute;
+  z-index: 1000;
+  margin-left: 37%;
+  
+}
+
+.wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  z-index: 900;
+}
+.wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
 }
 
 #followUS {
@@ -9818,11 +9843,4 @@ nav {
 .success {
   background-color: green;
   color: white;
-}
-
-@media only screen and (min-width: 520px) {
-  body {
-    background-image: url("/images/siteBackground.jpg");
-    background-position: 100px -120px;
-  }
 }

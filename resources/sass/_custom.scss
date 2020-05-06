@@ -1,7 +1,7 @@
 body{
-    background-image: url("/images/siteBackgroundSmall.jpg");
-    background-repeat: no-repeat;
-    background-color: black;
+    // background-image: url("/images/siteBackgroundSmall.jpg");
+    // background-repeat: no-repeat;
+    // background-color: black;
     // background-attachment: fixed;
     // background-position: 50% 5%;
     // background-size: 100% 100%;
@@ -87,7 +87,7 @@ nav{
 }
 @media only screen and (min-width: 520px) {
     body{
-      background-image: url("/images/siteBackground.jpg");
-      background-position: 100px -120px;
+    //   background-image: url("/images/siteBackground.jpg");
+    //   background-position: 100px -120px;
     }
 }

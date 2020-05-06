@@ -111,12 +111,17 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <main class="py-4">
-            <div class="container">
-                <div class="ml-5">
-                    <a href = "/"><img class="img-fluid" src = "/images/siteLogo.png" alt="Athletic Prospects Logo"/></a>
+        <main>
+            <div class="logo-home-home">
+            <div class="logo-home ">
+                    <!-- <a href = "/"><img class="img-fluid mx-auto d-block w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a> -->
+                    <a href = "/"><img class="w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a>
                 </div>
             </div>
+
+
+            
+            
             @yield('content')
 
         </main>
