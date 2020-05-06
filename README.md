@@ -18,11 +18,13 @@
 
 7. run `composer install` to install dependencies
 
-8. Create .env file in root directory. Copy contents of env.example and modify variables
+8. Switch to project directory
 
-9. Bash into homestead, run `php artisan key:generate` to generate an app key
+9. Create .env file in root directory. Copy contents of env.example and modify variables
 
-10. run `php artisan cache:clear` and `php artisan config:clear`
+10. Bash into homestead, run `php artisan key:generate` to generate an app key
+
+11. run `php artisan cache:clear` and `php artisan config:clear`
 
 ## With built-in server
 1. cd in project folder
