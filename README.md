@@ -1,5 +1,5 @@
 
-#Installation
+# Installation
 
 - Clone Repo
 
@@ -14,13 +14,15 @@
 
 5. Bash into homestead using `vagrant ssh`
 
-6. run `composer install` to install dependencies
+6. cd into /code
 
-7. Create .env file in root directory. Copy contents of env.example and modify variables
+7. run `composer install` to install dependencies
 
-8. Bash into homestead, run `php artisan key:generate` to generate an app key
+8. Create .env file in root directory. Copy contents of env.example and modify variables
 
-9. run `php artisan cache:clear` and `php artisan config:clear`
+9. Bash into homestead, run `php artisan key:generate` to generate an app key
+
+10. run `php artisan cache:clear` and `php artisan config:clear`
 
 ## With built-in server
 1. cd in project folder
