@@ -57,7 +57,7 @@
 
 <div class="bg-dark">
   <div class= "col-md-7 ml-auto mr-auto pt-5">
-    <h2 class="text-white text-center">Latest from @Athletic Prospects</h2>
+    <h2 class="text-white text-center">Latest from Athletic Prospects</h2>
       @foreach($blogs as $blog)
         <div class="card mb-3" style="max-width: 100%;">
           <div class="row no-gutters">
