@@ -115,7 +115,7 @@
             <div class="logo-home-home">
             <div class="logo-home ">
                     <!-- <a href = "/"><img class="img-fluid mx-auto d-block w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a> -->
-                    <a href = "/"><img class="w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a>
+                    <a href = "/"><img class="w-25 logo" src = "/images/triangleLogo.png" alt="Athletic Prospects Logo"/></a>
                 </div>
             </div>
 
