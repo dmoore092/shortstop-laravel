@@ -16,7 +16,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        /// shows specific player
+        /// shows blog posts
         $posts = Blog::orderBy('created_at', 'desc')->paginate(10);
         return view('pages.blog')->with('posts', $posts);
     }

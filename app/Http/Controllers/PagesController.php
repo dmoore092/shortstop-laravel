@@ -10,10 +10,16 @@ use App\Blog;
 class PagesController extends Controller
 {
     public function index(){
-        //show homepage with post from db
+        
         try{
+            //show homepage with page content from db
             $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
-            return view('pages.home')->with('post', $post[0]);
+            
+            /// shows homepage with blog content
+            $blogs = Blog::orderBy('created_at', 'desc')->paginate(1);
+
+            return view('pages.home')->with('post', $post[0])->with('blogs', $blogs);
+            // return view('pages.home')->with('posts', $posts);
         }
         catch(\Illuminate\Database\QueryException $ex){
 

@@ -47,12 +47,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <div class="social-media" >
-                            <span id="followUS">Follow US </span>
-                            <a href="http://www.facebook.com/Athletic-Prospects-191313784947225" target="_blank" class="fa fa-facebook"></a>
-                            <a href="http://www.twitter.com/A_Prospects" target="_blank" class="fa fa-twitter"></a>
-                            <a href="http://www.instagram.com/athleticprospects" target="_blank" class="fa fa-instagram"></a>
-                            <a href="mailto:kprestano@athleticprospects.com" class="fa fa-envelope"></a>
-                        </div>
+                        <span id="followUS">Follow US </span>
+                        <a href="http://www.facebook.com/Athletic-Prospects-191313784947225" target="_blank" class="fa fa-facebook"></a>
+                        <a href="http://www.twitter.com/A_Prospects" target="_blank" class="fa fa-twitter"></a>
+                        <a href="http://www.instagram.com/athleticprospects" target="_blank" class="fa fa-instagram"></a>
+                        <a href="mailto:kprestano@athleticprospects.com" class="fa fa-envelope"></a>
+                    </div>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <ul class="navbar-nav mr-auto">
@@ -112,16 +112,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
         <main>
-            <div class="logo-home-home">
             <div class="logo-home ">
                     <!-- <a href = "/"><img class="img-fluid mx-auto d-block w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a> -->
-                    <a href = "/"><img class="w-25 logo" src = "/images/triangleLogo.png" alt="Athletic Prospects Logo"/></a>
+                    <a href = "/"><img class="w-25 logo" src = "/images/angleCrop3.png" alt="Athletic Prospects Logo"/></a>
                 </div>
-            </div>
-
-
-            
-            
             @yield('content')
 
         </main>

@@ -9723,7 +9723,7 @@ body {
 }
 
 .logo-home{
-  height: 130px;
+  height: 170px;
   overflow: visible;
   position: relative;
 }
@@ -9736,7 +9736,7 @@ body {
 
 .wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 30.5%; /* 16:9 */
   padding-top: 25px;
   height: 0;
   z-index: 900;
@@ -9745,9 +9745,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 100%;
-  margin-left: 10%;
+  width: 60%;
+  height: 70vh;
+  margin-left: 20%;
 }
 
 #followUS {
@@ -9844,3 +9844,55 @@ nav {
   background-color: green;
   color: white;
 }
+
+@media only screen and (max-width: 900px) {
+  /* .logo-home{
+    height: 130px;
+    overflow: visible;  */
+    /* position: relative; */
+    
+  /* }
+  .logo{
+    margin-top: 80px;
+    transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+  }*/
+  
+  .wrapper {
+    position: relative;
+    padding-top: 50px;
+  }
+  .wrapper iframe {
+    width: 100%;
+    height: 30vh;
+    margin-left: 0;
+    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+/*  .logo-home{
+    height: 130px;
+    overflow: visible;
+    /* position: relative; */
+    
+  /* }
+  .logo{
+    margin-top: 80px;
+    transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+  } */
+  
+  .wrapper {
+    position: relative;
+    padding-top: 50px;
+  }
+  .wrapper iframe {
+    width: 100%;
+    height: 30vh;
+    margin-left: 0;
+    
+  } 
+} 
