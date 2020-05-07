@@ -21,12 +21,14 @@
                             <p class="card-text">
                                 {!! $post->text !!}
                             </p>
+                            @if($post->podcast != null or $post->podcast != "")
                             <p>
                                 <audio controls>
                                     <source src="https://shortstop-userimages.s3.amazonaws.com/{{$post->podcast}}" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </p>
+                            @endif
                         </div>
                     </div>
                 </div>

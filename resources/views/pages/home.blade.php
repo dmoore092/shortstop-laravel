@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Home')
 @section('content')
 <!-- YouTube video -->
-<div class="bg-dark wrapper">
+<div class="bg-dark wrapper mb-5">
   <iframe allowfullscreen type='text/html' height="900px" frameBorder="0" src="https://www.youtube.com/embed/ImtZ5yENzgE"></iframe>
 </div>
 
@@ -14,7 +14,7 @@
 /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-<div class="col-md-7 ml-auto mr-auto">
+<div class="col-md-7 pt-5 ml-auto mr-auto">
   <div id="mc_embed_signup">
     <form action="https://ree.us19.list-manage.com/subscribe/post?u=45926d2b59818d4eff683fd87&amp;id=3feaa35502" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
@@ -56,50 +56,97 @@
 <!-- most recent blogs -->
 
 <div class="bg-dark">
-  <div class= "col-md-7 ml-auto mr-auto pt-5">
+  <div class= "col-md-7  ml-auto mr-auto pt-5">
     <h2 class="text-white text-center">Latest from Athletic Prospects</h2>
+    <div class="bg-white">
       @foreach($blogs as $blog)
-        <div class="card mb-3" style="max-width: 100%;">
-          <div class="row no-gutters">
+        <div >
           @if($blog->post_image != null or $blog->post_image != "")
-            <div class="col-md-4">
-              <img src="https://shortstop-userimages.s3.amazonaws.com/{{$post->post_image}}" class="card-img" alt="Blog Image">
-            </div>
+              <img src="https://shortstop-userimages.s3.amazonaws.com/{{$blog->post_image}}" style="max-width: 240px;" class="card-img float-md-left ml-5 mt-5" alt="Blog Image">
           @endif
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"> {{$blog->title}} </h5>
-                <p class="card-text">
-                  {!! $blog->text !!}
-                </p>
-                <p>
-                  <audio controls>
-                    <source src="https://shortstop-userimages.s3.amazonaws.com/{{$blog->podcast}}" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                  </audio>
-                </p>
+          <!-- <div class="pl-2 pr-2"> -->
+            <h4 class="text-center pt-5"> {{$blog->title}} </h4>
+              <div class="block-ellipsis">
+                {!! $blog->text !!} 
               </div>
-            </div>
-          </div>
+              @if($blog->podcast != null or $blog->podcast != "")
+              <p>
+                <audio controls>
+                  <source src="https://shortstop-userimages.s3.amazonaws.com/{{$blog->podcast}}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </p>
+              @endif
+          <!-- </div> -->
+        </div>
+        <hr class="my-4">
+      @endforeach
       </div>
-      <hr class="my-4">
-    @endforeach
-    <h5 class="text-right pb-4"><a href="/blog" class="text-white">View more >></a></h5>
+      <h5 class="text-right pb-4"><a href="/blog" class="text-white">View more >></a></h5>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://via.placeholder.com/555x350" alt="image of keith">
+    </div>
+    <div class="col-sm">
+    <h5 class="text-center pt-5">About Keith Prestano</h5>
+      <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies pretium erat, 
+        hendrerit imperdiet purus malesuada nec. Aenean at elementum leo. Quisque urna risus, 
+        consectetur in condimentum ut, semper commodo risus. Cras enim purus, imperdiet at accumsan vitae, 
+        suscipit et quam. Morbi vestibulum erat in tortor ultricies, id hendrerit nisl eleifend. Nam 
+        feugiat tempus felis eget faucibus. Nulla facilisi. Mauris eleifend, quam ut rutrum convallis, 
+        enim dui fringilla elit, nec lobortis nisl risus sit amet orci. Nulla cursus mollis libero, 
+        eu viverra nunc viverra in.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    <h5 class="text-center pt-5">About Athletic Prospects</h5>
+      <p class="text-center">
+        Our mission is to build a strong community between Athletes and Coaches to create positive outcomes in life and in the game for all involved.<br />
+        We strive to provide High School and JUCO athletes the tools to successfully promote themselves to college coaches by assisting athletes through 
+        the recruiting process. Our goal is to be a mentor-leader to student-athletes to teach them the importance of academics and athletics while 
+        showing strong leadership characteristics to be successful on and off the playing field.
+      </p>
+    </div>
+    <div class="col-sm">
+    <img src="https://via.placeholder.com/555x350" alt="athletic prospects image">
+    </div>
+  </div>
+</div>
+
+<div class="bg-dark pb-5">
+  <h3 class="text-center text-white pt-5">Athletic Prospects: Core Values</h3>
+  <div class="row">
+    <div class="mx-auto d-block">
+      <img src="https://via.placeholder.com/350x150" alt="core value 1">
+      <img src="https://via.placeholder.com/350x150" alt="core value 2">
+      <img src="https://via.placeholder.com/350x150" alt="core value 3">
+      <img src="https://via.placeholder.com/350x150" alt="core value 4">
+      <img src="https://via.placeholder.com/350x150" alt="core value 5">
+    </div>
+  </div>
+  
+</div>
 
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<!-- <div class="jumbotron col-md-7 ml-auto mr-auto">
   <h1 class="display-4">{!! html_entity_decode($post->header) !!}</h1>
   <hr class="my-4">
   <p class="lead">{!! html_entity_decode($post->text)!!}</p>
   <hr class="my-4">
   <a href = "register.php"><img class="img-fluid" src = "/images/mainbanner.jpg" alt="main banner" /></a>
   <hr class="my-4">
-  @include('includes.footer')
-</div>
-
+  
+</div> -->
+@include('includes.footer')
 @endsection
 
 

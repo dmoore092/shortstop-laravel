@@ -16,7 +16,7 @@ class PagesController extends Controller
             $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
             
             /// shows homepage with blog content
-            $blogs = Blog::orderBy('created_at', 'desc')->paginate(1);
+            $blogs = Blog::orderBy('created_at', 'desc')->paginate(3);
 
             return view('pages.home')->with('post', $post[0])->with('blogs', $blogs);
             // return view('pages.home')->with('posts', $posts);
