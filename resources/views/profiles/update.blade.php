@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Update Profile')
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
     <span class="float-right">
         @if(!auth::guest())
             @if(auth::user()->id == $user->id || auth::user()->role == 'admin')
@@ -166,7 +166,8 @@
     {{Form::submit('Submit', ['class' => 'btn btn-secondary'])}}
   {!! Form::close() !!}
 <hr>
-@include('includes.footer')
+
 </div>{{-- end of jumbotron --}}
+@include('includes.footer')
 @endsection
 

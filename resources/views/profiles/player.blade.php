@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Profile')
 
 @section('content')
-<div class="jumbotron col-lg-7 ml-auto mr-auto">
+<div class="jumbotron col-lg-7 ml-auto mr-auto mt-5">
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
@@ -153,14 +153,11 @@
         </div>
     </div>
     @endif
-<div>
-
-
-
-
-    <hr class="my-4">
-    @include('includes.footer')
+    <div>
+        <hr class="my-4">
+    </div>
 </div>
+@include('includes.footer')
 @endsection
 
 {{--

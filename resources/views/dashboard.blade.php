@@ -2,7 +2,7 @@
 
 @section('title', 'Athletic Prospects | Dashboard')
 @section('content')
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
 
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -33,6 +33,7 @@
         </div>
     @endif
     <hr class="my-4">
-    @include('includes.footer')
+    
 </div>
+@include('includes.footer')
 @endsection

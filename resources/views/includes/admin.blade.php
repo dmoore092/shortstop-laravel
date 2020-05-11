@@ -1,4 +1,4 @@
-<h1 class="display-4">Admin Dashboard</h1>
+<h1 class="display-4 pt-5">Admin Dashboard</h1>
 <a class="btn btn-secondary" href="">Download Database</a>
 <hr class="my-4">
 <ul class="nav nav-tabs" id="myTab" role="tablist">

@@ -58,6 +58,17 @@
                         <ul class="navbar-nav mr-auto">
                                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" style="z-index:1001;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Player Development <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/conditioning">Strength and Conditioning</a>
+                                        <a class="dropdown-item" href="/drills">Baseball and Softball Drills</a>
+                                        <a class="dropdown-item" href="/recruiting">College Recruiting Proess</a>
+                                        <a class="dropdown-item" href="/performance">Mental Performance</a>
+                                    </div>
+                                </li>
                                 <li class="nav-item"><a class="nav-link" href="/players">Browse Athletes</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                         </ul>
@@ -111,13 +122,12 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <main>
-            <div class="logo-home ">
-                    <!-- <a href = "/"><img class="img-fluid mx-auto d-block w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a> -->
-                    <a href = "/"><img class="w-25 logo" src = "/images/angleCrop3.png" alt="Athletic Prospects Logo"/></a>
-                </div>
+        <main class="bg-dark">
+            <div class="logo-home bg-white">
+                <!-- <a href = "/"><img class="img-fluid mx-auto d-block w-25 logo" src = "/images/newLogoCrop.png" alt="Athletic Prospects Logo"/></a> -->
+                <a href = "/"><img class="w-25 logo img-fluid" src = "/images/angleCrop3.png" alt="Athletic Prospects Logo"/></a>
+            </div>
             @yield('content')
-
         </main>
     </div>
     <script src="{{ asset('js/inputmasking.js')}}"></script>

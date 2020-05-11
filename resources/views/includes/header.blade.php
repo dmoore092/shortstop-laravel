@@ -18,7 +18,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/players">Browse Athletes</a></li>
+            <li><a href="/players">Browse Athletes---</a></li>
             <?php // <li><a href="findcoaches.php">Find Coaches</a></li>
             //<li><a href="services.php">Services</a></li> ?>
             <li><a href="/blog">Blog</a></li>

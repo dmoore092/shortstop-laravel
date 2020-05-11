@@ -71,4 +71,20 @@ class PagesController extends Controller
         $post->save();
         return redirect()->action('PagesController@index');
     }
+
+    public function conditioning(){
+        return view('pages.conditioning');
+    }
+
+    public function drills(){
+        return view('pages.drills');
+    }
+
+    public function recruiting(){
+        return view('pages.recruiting');
+    }
+
+    public function performance(){
+        return view('pages.performance');
+    }
 }

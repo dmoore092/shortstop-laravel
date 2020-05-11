@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto">
+<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
     <h1 class="display-4">Players</h1>
     <hr class="my-4">
     <div class="row  table-responsive">
@@ -50,10 +50,10 @@
 
   <hr class="my-4">
   {{$users->links()}}
-  @include('includes.footer')
+  
 
 </div>
-
+@include('includes.footer')
 @endsection
 
 {{--<div class="container col-sm-12 col-md-5">--}}
