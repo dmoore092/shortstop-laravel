@@ -62,7 +62,7 @@
     <h2 class="text-white text-center pt-4">Latest from Athletic Prospects</h2>
     <div class="row bg-white">
       <div class="col-sm">
-        <img class="w-75" src = "/images/black.jpg" alt="Athletic Prospects Logo"/>
+        <img class="w-75" src = "/images/black.JPG" alt="Athletic Prospects Logo"/>
       </div>
       <div class= "col-sm  ml-auto mr-auto pt-5">
         <div class="bg-white">
