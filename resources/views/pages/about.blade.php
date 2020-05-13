@@ -9,13 +9,13 @@
     <hr>
     <div class="container">
       <div class="row">
-        <div class="col-8">
+        <div class="col-md-8">
           <h2 class="display-5">{!! html_entity_decode($post->header) !!}</h2>
           <p class="lead">{!! html_entity_decode($post->text) !!}</p>
           <h2>Any Questions?</h2>
           <p>Email us at <a href="mailto:Kprestano@athleticprospects.com">Kprestano@athleticprospects.com</a></p>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="card bg-dark text-white mt-4">
           <a href="/conditioning"><img class="card-img" src="/images/strengthConditioning.PNG" alt="Strength and Conditioning"></a>
           </div>
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- container -->
   </div>
 </div>
     @include('includes.footer')

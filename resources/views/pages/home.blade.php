@@ -83,12 +83,18 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img src="https://via.placeholder.com/555x700" alt="image of keith">
+      <img src="https://via.placeholder.com/555x350" alt="image of keith">
     </div>
     <div class="col-sm">
       <h4 class="text-center pt-5 profile-labels">About Keith Prestano</h4>
       <h5 class="text-center">Coach Prestano is...</h5>
-      <p class="text-center">A former collegiate athlete and coach, a consultant, speaker, and student-athlete peak performance coach.</p>
+      <p class="text-center">
+        I am a former college baseball coach and now owner of the Interstate Collegiate Baseball League as well as partner in the high school baseball league, 
+        Upstate Baseball League. I believe that your mindset shapes your future. 
+        As someone that completely shifted my mindset from my early years, I know that this is the key to success. 
+        I support athletes through player development, the college recruiting process, and creating a strong foundation in order to be a highly successful student athlete.
+      </p>
+      <!-- <p class="text-center">A former collegiate athlete and coach, a consultant, speaker, and student-athlete peak performance coach.</p>
       <h5 class="text-center profile-labels">Learn, Lead, Empower, Impact</h5>
       <p class="text-center">
         These four core aspects were developed over time through my own life experiences. 
@@ -104,7 +110,7 @@
           My ultimate goal as your mentor is to push you to your highest potential as a student athlete by focusing on the four key pillars to your success 
           which will lead to substantial opportunities.
         </i>
-      </h6>
+      </h6> -->
     </div>
   </div>
 </div>
@@ -113,7 +119,13 @@
   <div class="row">
     <div class="col-sm">
     <h5 class="text-center pt-5">About Athletic Prospects</h5>
-      <p >
+    <p class="text-center">
+      Welcome to Athletic Prospects, where our mission is to provide you the tools and strategies to become a Next Level Athlete. 
+      A Next Level athlete has the four key skills necessary to stand out as a player: a consistent <a href="/conditioning">strength training plan</a>, 
+      a solid progression in their <a href="/recruiting">college recruiting</a>, 
+      key practices for <a href="/drills">skill development</a> and ongoing work on their <a href="/performance">mental performance</a>.
+      </p>
+      <!-- <p >
         <span class="profile-labels">Welcome to Athletic Prospects,</span> where our mission is to provide you the tools and strategies to become a Next Level Athlete. 
         A Next Level athlete has the four key skills necessary to stand out as a player: a consistent strength training plan, 
         a solid progression in their college recruiting, key practices for skill development and ongoing work on their mental performance. <br />
@@ -137,10 +149,10 @@
         We offer every athlete a FREE player profile in order to increase their exposure and provide them this vital 
         step in progressing in the college recruiting process. Here, you will also find key tips and posts created by 
         myself and other coaches to support you in your growth as an athlete. 
-      </p>
+      </p> -->
     </div>
     <div class="col-sm">
-    <img src="https://via.placeholder.com/555x700" alt="athletic prospects image">
+    <img src="https://via.placeholder.com/555x350" alt="athletic prospects image">
     </div>
   </div>
 </div>
