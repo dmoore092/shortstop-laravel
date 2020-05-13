@@ -2,13 +2,13 @@
 
 @section('title', 'Athletic Prospects | Blog')
 @section('content')
-    <div class="jumbotron col-md-7 ml-auto mr-auto">
+    <div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
         <h1 class="display-4">Blog @ Athletic Prospects</h1>
         <p class="lead"></p>
         <hr class="my-4">
         @include('includes.messages')
         @foreach($posts as $post)
-            <div class="card mb-3" style="max-width: 100%;">
+            <div class="card mb-3" style="max-width: 100%;" id={{ $post->id }}>
                 <div class="row no-gutters">
                 @if($post->post_image != null or $post->post_image != "")
                     <div class="col-md-4">

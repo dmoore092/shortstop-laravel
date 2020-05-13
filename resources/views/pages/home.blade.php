@@ -4,16 +4,10 @@
 @section('content')
 <!-- YouTube video -->
 <div class="wrapper ">
-  <iframe allowfullscreen type='text/html' height="900px" frameBorder="0" src="https://www.youtube.com/embed/ImtZ5yENzgE"></iframe>
+  <iframe allowfullscreen type='text/html' height="900px" frameBorder="0" src="https://www.youtube.com/embed/ImtZ5yENzgE?autoplay=1"></iframe>
 </div>
 
-<!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-  We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
+<!-- mailchimp sign up form -->
 <div class="bg-white">
   <div class="col-md-7 pt-5 ml-auto mr-auto">
     <div id="mc_embed_signup">
@@ -50,8 +44,6 @@
       </div>
     </form>
   </div>
-  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[19]='MMERGE19';ftypes[19]='text';fnames[28]='MMERGE28';ftypes[28]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-  <!--End mc_embed_signup-->
   </div>
 </div>
 
@@ -68,7 +60,7 @@
         <div class="bg-white">
         @foreach($blogs as $blog)
           <div >
-            <h4 class="text-center"><a href="/blog" class="text-black">{{$blog->title}}</a></h4>
+            <h4 class="text-center"><a href="/blog#{{ $blog->id }}" class="text-black">{{$blog->title}}</a></h4>
             @if($blog->podcast != null or $blog->podcast != "")
             <p>
               <audio controls class="mx-auto d-block">
@@ -91,18 +83,28 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img src="https://via.placeholder.com/555x350" alt="image of keith">
+      <img src="https://via.placeholder.com/555x700" alt="image of keith">
     </div>
     <div class="col-sm">
-    <h5 class="text-center pt-5">About Keith Prestano</h5>
-      <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies pretium erat, 
-        hendrerit imperdiet purus malesuada nec. Aenean at elementum leo. Quisque urna risus, 
-        consectetur in condimentum ut, semper commodo risus. Cras enim purus, imperdiet at accumsan vitae, 
-        suscipit et quam. Morbi vestibulum erat in tortor ultricies, id hendrerit nisl eleifend. Nam 
-        feugiat tempus felis eget faucibus. Nulla facilisi. Mauris eleifend, quam ut rutrum convallis, 
-        enim dui fringilla elit, nec lobortis nisl risus sit amet orci. Nulla cursus mollis libero, 
-        eu viverra nunc viverra in.
+      <h4 class="text-center pt-5 profile-labels">About Keith Prestano</h4>
+      <h5 class="text-center">Coach Prestano is...</h5>
+      <p class="text-center">A former collegiate athlete and coach, a consultant, speaker, and student-athlete peak performance coach.</p>
+      <h5 class="text-center profile-labels">Learn, Lead, Empower, Impact</h5>
+      <p class="text-center">
+        These four core aspects were developed over time through my own life experiences. 
+        Growing up in New York City with three siblings and a single father, life was not always consistent or easy. 
+        As a competitive athlete, all through high school and college, sports became my outlet- guiding me to the person I am today.<br /><br />
+        I am a former college baseball coach and now owner of the Interstate Collegiate Baseball League as well as partner in the high school baseball league, 
+        Upstate Baseball League. I believe that your mindset shapes your future. As someone that completely shifted my mindset from my early years, 
+        I know that this is the key to success. I support athletes through player development, the college recruiting process, 
+        and creating a strong foundation in order to be a highly successful student athlete.
       </p>
+      <h6 class="text-center font-weight-bold">
+        <i class="font-weight-bold profile-labels">
+          My ultimate goal as your mentor is to push you to your highest potential as a student athlete by focusing on the four key pillars to your success 
+          which will lead to substantial opportunities.
+        </i>
+      </h6>
     </div>
   </div>
 </div>
@@ -111,15 +113,34 @@
   <div class="row">
     <div class="col-sm">
     <h5 class="text-center pt-5">About Athletic Prospects</h5>
-      <p class="text-center">
-        Our mission is to build a strong community between Athletes and Coaches to create positive outcomes in life and in the game for all involved.<br />
-        We strive to provide High School and JUCO athletes the tools to successfully promote themselves to college coaches by assisting athletes through 
-        the recruiting process. Our goal is to be a mentor-leader to student-athletes to teach them the importance of academics and athletics while 
-        showing strong leadership characteristics to be successful on and off the playing field.
+      <p >
+        <span class="profile-labels">Welcome to Athletic Prospects,</span> where our mission is to provide you the tools and strategies to become a Next Level Athlete. 
+        A Next Level athlete has the four key skills necessary to stand out as a player: a consistent strength training plan, 
+        a solid progression in their college recruiting, key practices for skill development and ongoing work on their mental performance. <br />
+
+        <span class="profile-labels">A consistent strength training plan</span> sets you up to be in the best possible shape for your sport. 
+        Consistent training is imperative to your development as an athlete in order to progress as a player 
+        and to be prepared for all of the physical demands that come from being a student athlete.<br />
+
+        <span class="profile-labels">A solid progression in your college recruitment</span> will help to bridge the gap between you, as the player, 
+        and the college coaches of your desired schools. The goal is to put you in the best possible position, ahead of time, 
+        in order to increase your exposure and opportunities for your future as a collegiate athlete.<br />
+
+        <span class="profile-labels">Your skill development</span> as an athlete shows your dedication to the sport and works to constantly challenge you and improve your skills as a player.<br /> 
+
+        <span class="profile-labels">Mental performance</span> is often the piece that most athletes are missing. This elite mindset will keep you on track with your goals, 
+        improve you as a player and teammate and will take you to that next level as a successful athlete. 
+        Many athletes are missing the strong mindset that allows them to push through challenging games, brush off errors, 
+        pull from your confidence when it’s needed and support and motivate your teammates to create a winning culture.<br />
+
+        <span class="profile-labels">This platform</span> will give you the ultimate tools and key tips that you need to progress as a collegiate player. 
+        We offer every athlete a FREE player profile in order to increase their exposure and provide them this vital 
+        step in progressing in the college recruiting process. Here, you will also find key tips and posts created by 
+        myself and other coaches to support you in your growth as an athlete. 
       </p>
     </div>
     <div class="col-sm">
-    <img src="https://via.placeholder.com/555x350" alt="athletic prospects image">
+    <img src="https://via.placeholder.com/555x700" alt="athletic prospects image">
     </div>
   </div>
 </div>

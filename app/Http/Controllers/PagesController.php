@@ -60,7 +60,7 @@ class PagesController extends Controller
         //update about us page
         $this->middleware('admin');
         $this->validate($request, [
-            'title' => 'required',
+            'header' => 'required',
             'text' => 'required',
         ]);
         
