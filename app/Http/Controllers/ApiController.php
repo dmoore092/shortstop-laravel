@@ -14,7 +14,7 @@ class ApiController extends Controller
             /// shows homepage with blog content
             $blogs = Blog::orderBy('created_at', 'desc')->paginate(3);
 
-            return view('pages.home')->with('post', $post[0])->with('blogs', $blogs);
+            //return view('pages.home')->with('post', $post[0])->with('blogs', $blogs);
             // return view('pages.home')->with('posts', $posts);
         }
         catch(\Illuminate\Database\QueryException $ex){
