@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
     public function index() {
-        return response()->json(["message" => "hello from the api"]);
+        //return response()->json(["message" => "hello from the api"]);
         try{
         //     //show homepage with page content from db
             $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
-            
         //     /// shows homepage with blog content
         //     $blogs = Blog::orderBy('created_at', 'desc')->paginate(3);
 
