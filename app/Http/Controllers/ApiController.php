@@ -11,6 +11,7 @@ class ApiController extends Controller
         try{
         //     //show homepage with page content from db
             $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
+            $post = [1, "cat"];
         //     /// shows homepage with blog content
         //     $blogs = Blog::orderBy('created_at', 'desc')->paginate(3);
 
