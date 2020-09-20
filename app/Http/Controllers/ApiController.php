@@ -12,7 +12,8 @@ class ApiController extends Controller
         //     //show homepage with page content from db
             //$post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get()->toJson(JSON_PRETTY_PRINT);
         //     /// shows homepage with blog content
-            $blogs = Blog::get()->toJson(JSON_PRETTY_PRINT);
+            // $blogs = Blog::get()->toJson(JSON_PRETTY_PRINT);
+            $blogs = ['test', 1, "test2", 2];
 
         //     //return view('pages.home')->with('post', $post[0])->with('blogs', $blogs);
         //     // return view('pages.home')->with('posts', $posts);
