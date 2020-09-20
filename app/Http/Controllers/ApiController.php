@@ -21,7 +21,7 @@ class ApiController extends Controller
 
         }
 //        return dd($post[0]->header);
-        return response()->json([$post[0]]);
+        return response()->json(["message" => "Hello from the API"]);
         //view('pages.home')->with('post', $post[0]);
       }
 }
