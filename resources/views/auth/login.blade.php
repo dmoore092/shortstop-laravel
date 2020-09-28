@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container login-page">
+<div class="container login-page" style="height: 60vh;">
     <div class="row justify-content-center">
         <div id="container-main" class="col-md-11">
             <div class="card mt-5">
