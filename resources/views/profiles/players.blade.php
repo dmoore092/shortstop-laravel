@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
+<div class="jumbotron col-md-7 bg-white ml-auto mr-auto mt-5">
     <h1 class="display-4">Players</h1>
     <hr class="my-4">
     <div class="row  table-responsive">

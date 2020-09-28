@@ -39,6 +39,19 @@
         <link rel="https://api.w.org/" href="https://athleticprospects.com/wp-json/" /><link rel="alternate" type="application/json" href="https://athleticprospects.com/wp-json/wp/v2/pages/155" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://athleticprospects.com/xmlrpc.php?rsd" />
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://athleticprospects.com/wp-includes/wlwmanifest.xml" /> 
         <link rel="canonical" href="https://athleticprospects.com/fitness-programs/" />
+
+        <!-- my stuff below -->
+        <!-- Scripts -->
+        <script src="/js/app.js" defer></script>
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+        <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
+        <script src="/js/inputmask/dist/jquery.inputmask.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     </head>
 <body>
     <div id="app">
@@ -100,7 +113,7 @@
                                                 @endif
                                             @else
                                                 <li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-165">
-                                                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    <a href="#">
                                                         {{ Auth::user()->name }} <span class="caret"></span>
                                                     </a>
                                                     <ul class="sub-menu">
@@ -122,13 +135,6 @@
                                              @endguest
                                         </ul>
                                     </div><!-- main-menu-navigation -->                             
-                                    <div id="contact-info">
-                                        <div class="contact"></div>
-                                        <div class="mail"></div>
-                                        <div class="socialbox">
-                                            <a href="https://www.instagram.com/coachprestano/"><i class="fab fa-instagram"></i><span class="screen-reader-text">Instagram</span></a>
-                                        </div>
-                                    </div><!-- social-box -->
                                     <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text">Close Menu</span></a>
                                 </nav>
                             </div><!-- div after logo -->
@@ -137,7 +143,7 @@
                 </div><!-- middle-header -->
             </div><!-- header -->
         </header>
-        <main class="bg-dark">
+        <main class="pt-5" style="background-color:#AEAEAE;">
             @yield('content')
         </main>
     </div><!-- app -->
