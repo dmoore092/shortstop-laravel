@@ -26,6 +26,8 @@
 
 11. run `php artisan cache:clear` and `php artisan config:clear`
 
+12. Navigate browser to 192.168.10.10
+
 ## With built-in server
 1. cd in project folder
 
