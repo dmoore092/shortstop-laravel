@@ -9722,51 +9722,12 @@ body {
   font-family: "Merriweather", serif;
 }
 
-#followUS {
-  color: white;
-}
-
-.fa {
-  width: 25px;
-  padding: 7.5px 22px 20px 10px;
-  height: 22.5px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 3px;
-  margin-right: 2px;
-  margin-bottom: 5px;
-}
-
-.fa-facebook {
-  background: #3b5998;
-  color: white;
-}
-
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
-
-.fa-envelope {
-  background: #8081ce;
-  color: white;
-}
-
-.logo-home {
-  position: relative;
+.header {
   height: 150px;
-  overflow: visible;
-  z-index: 10;
 }
 
-.logo {
-  display: block;
-  margin: auto;
+.header img {
+  width: 170px;
 }
 
 .wrapper {
@@ -9842,13 +9803,6 @@ nav {
 @media only screen and (max-width: 900px) {
   .logo-home {
     height: 50px;
-  }
-
-  .logo {
-    transform: scale(3, 3);
-    -ms-transform: scale(3, 3);
-    -webkit-transform: scale(3, 3);
-    margin-top: 14%;
   }
 
   .wrapper iframe {

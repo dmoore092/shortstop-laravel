@@ -11,22 +11,22 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/about', "PagesController@about");
-Route::get('/conditioning', "PagesController@conditioning");
-Route::get('/drills', "PagesController@drills");
-Route::get('/recruiting', "PagesController@recruiting");
-Route::get('/performance', "PagesController@performance");
+// Route::post('/updateHome', 'PagesController@updateHome')->middleware('admin');
+// Route::post('/updateAbout', 'PagesController@updateAbout')->middleware('admin');
 
-Route::post('/updateHome', 'PagesController@updateHome')->middleware('admin');
-Route::post('/updateAbout', 'PagesController@updateAbout')->middleware('admin');
-// Route::get('/player', 'ProfileController@index');
-//Route::get('/blog', 'PagesController@blog');
-
-Route::resource('blog' ,'BlogController');
+// Route::resource('blog' ,'BlogController');
 Route::resource('players' ,'PlayerController');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'DashboardController@index');
+
+// Route::get('/', 'PagesController@index');
+// Route::get('/player', 'ProfileController@index');
+// Route::get('/blog', 'PagesController@blog');
+// Route::get('/about', "PagesController@about");
+// Route::get('/conditioning', "PagesController@conditioning");
+// Route::get('/drills', "PagesController@drills");
+// Route::get('/recruiting', "PagesController@recruiting");
+// Route::get('/performance', "PagesController@performance");

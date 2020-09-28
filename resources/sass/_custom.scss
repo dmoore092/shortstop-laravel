@@ -1,66 +1,12 @@
 body{
-    // background-image: url("/images/siteBackgroundSmall.jpg");
-    // background-repeat: no-repeat;
-    // background-color: black;
-    // background-attachment: fixed;
-    // background-position: 50% 5%;
-    // background-size: 100% 100%;
-    // font-family: "Lato", sans-serif !important;
     font-family: 'Merriweather', serif;
 }
 
-#followUS{
-    color: white;
-}
-.fa{
-    width: 25px;
-    padding: 7.5px 22px 20px 10px;
-    height: 22.5px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 3px;
-    margin-right: 2px;
-    margin-bottom: 5px;
-}
-.fa-facebook{
-    background: #3b5998;
-    color: white;
-}
-.fa-twitter{
-    background: #55ACEE;
-    color: white;
-}
-.fa-instagram{
-    background: #125688;
-    color: white;
-}
-.fa-envelope{
-    background: #8081ce;
-    color: white;
-}
-// .header-search{
-//     background-color: #bb0a1e;
-//     border-bottom: 1px solid #000;
-// }
-// #search-form{
-//     margin-top: 5px !important;
-// }
-// #header-search-btn{
-//     background-color: #000;
-//     color: white;
-//     margin-top: -7px !important;
-// }
-.logo-home{
-    position: relative;
-    // background-color: white;
+.header{
     height: 150px;
-    overflow: visible;
-    z-index: 10;
 }
-.logo{
-    // position: absolute;
-    display: block;
-    margin: auto;
+.header img{
+    width: 170px;
 }
 .wrapper {
     position: relative;
@@ -119,18 +65,8 @@ nav{
     height: 70vh;
 }
 @media only screen and (max-width: 900px) {
-    body{
-    //   background-image: url("/images/siteBackground.jpg");
-    //   background-position: 100px -120px;
-    }
     .logo-home{
         height: 50px;
-    }
-    .logo{
-        transform: scale(3, 3);
-        -ms-transform: scale(3, 3);
-        -webkit-transform: scale(3, 3);
-        margin-top: 14%;
     }
     .wrapper iframe {
         width: 100%;
