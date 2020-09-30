@@ -106,7 +106,7 @@ class PlayerController extends Controller
         $showcase2 = null;
         $showcase3 = null;
 
-        $this->validate($request, [
+        $validate = $request->validate([
             'name' => 'required',
             'gender' => 'required',
             'cell_phone' => 'required',
@@ -117,7 +117,8 @@ class PlayerController extends Controller
             'zip' => 'required',
             'highschool' => 'required',
             'weight' => 'required',
-            'height' => 'required',
+            'height_feet' => 'required',
+            'height_inches' => 'required',
             'grad_year' => 'required',
             'gpa' => 'required',
             'sport' => 'required',
