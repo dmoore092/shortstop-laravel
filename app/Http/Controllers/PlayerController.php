@@ -106,7 +106,7 @@ class PlayerController extends Controller
         $showcase2 = null;
         $showcase3 = null;
 
-        $this->validate($request, [
+        $validate = $request->validate([
             'name' => 'required',
             'gender' => 'required',
             'cell_phone' => 'required',
@@ -117,17 +117,18 @@ class PlayerController extends Controller
             'zip' => 'required',
             'highschool' => 'required',
             'weight' => 'required',
-            'height' => 'required',
+            'height_feet' => 'required',
+            'height_inches' => 'required',
             'grad_year' => 'required',
             'gpa' => 'required',
             'sport' => 'required',
             'primary_position' => 'required',
         ]);
 
+
         if($request->has('showcase1')){
             if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase1 = $match[1];
-//                return dd($showcase1);
             }
         }
 

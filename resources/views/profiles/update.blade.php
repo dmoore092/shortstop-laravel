@@ -16,6 +16,15 @@
     </span>
     {!! Form::open(['action' => ['PlayerController@update', $user->id], 'method' => 'POST', 'files'=>'true']) !!}
     <h1 class="display-4">Edit Profile</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
         <div class="col-sm-6">
             <div class="card mb-5">
@@ -61,7 +70,6 @@
                         <div>
                             {{Form::label('height', 'Height*', array('class' => 'update-label float-left height-labels'))}}
                             {{Form::selectRange('height_feet', 4, 7, $user->height_feet, ['class' => 'form-range'])}}
-                            {{-- {{Form::label('height_inches', '', array('class' => 'update-label float-right height-labels'))}} --}}
                             {{Form::selectRange('height_inches', 0, 11, $user->height_inches, ['class' => 'form-range'])}}
                         </div>
                         {{Form::label('grad_year', 'Class Of*', array('class' => 'update-label'))}}
@@ -170,4 +178,3 @@
 </div>{{-- end of jumbotron --}}
 @include('includes.footer')
 @endsection
-
