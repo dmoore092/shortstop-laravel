@@ -53,8 +53,8 @@
         <script type='text/javascript' src="/js/app.js" defer></script>
         <script type='text/javascript' src="/js/inputmask/dist/jquery.inputmask.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
-        <script type="text/javascript" src="/js/slidereveal.min.js"></script>
-
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.light.min.css">
+        <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
     </head>
 <body>
     <div id="app">
@@ -83,7 +83,7 @@
                                 <div id="menu-sidebar" class="nav sidebar">
                                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="Top Menu">
                                     <div class="main-menu-navigation clearfix">
-                                        <ul id="menu-main-menu" class="clearfix mobile_nav">
+                                        <ul id="menu-main-menu sidr" class="clearfix mobile_nav">
                                             <li id="menu-item-99" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-99">
                                                 <a href="https://athleticprospects.com">Home</a>
                                             </li>

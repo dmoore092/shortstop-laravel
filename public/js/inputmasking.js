@@ -22,5 +22,6 @@ $(document).ready(function(){
             .draw();
     } );
 
+    $('#navButton').sidr();
 });
 
