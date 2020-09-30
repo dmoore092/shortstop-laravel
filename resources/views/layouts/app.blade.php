@@ -40,16 +40,20 @@
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://athleticprospects.com/wp-includes/wlwmanifest.xml" /> 
         <link rel="canonical" href="https://athleticprospects.com/fitness-programs/" />
 
+        <!-- superfish menu -->
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/themes/advance-fitness-gym/js/jquery.superfish.js?ver=5.5.1' id='jquery-superfish-js'></script>
+
+
+
         <!-- my stuff below -->
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
         <!-- Scripts -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script type='text/javascript' src="/js/app.js" defer></script> -->
-        <script type='text/javascript' src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script type='text/javascript' src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+        <script type='text/javascript' src="/js/app.js" defer></script>
         <script type='text/javascript' src="/js/inputmask/dist/jquery.inputmask.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+        <script type="text/javascript" src="/js/slidereveal.min.js"></script>
 
     </head>
 <body>
@@ -74,7 +78,7 @@
                             <div class="col-lg-9 col-md-3 col-3 ">
                                 <div class="main-menu">
                                     <div class="toggle-menu responsive-menu">
-                                        <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text">Open Menu</span></button>
+                                        <button role="tab" id="navButton"><i class="fas fa-bars"></i><span class="screen-reader-text">Open Menu</span></button>
                                     </div><!-- toggle-menu -->
                                 <div id="menu-sidebar" class="nav sidebar">
                                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="Top Menu">
