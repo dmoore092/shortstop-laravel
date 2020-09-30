@@ -7,11 +7,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--icon library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+        <script type='text/javascript' src='https://athleticprospects.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+        <script async defer type='text/javascript' src='https://stats.wp.com/s-202040.js' id='woocommerce-analytics-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/themes/advance-fitness-gym/js/SmoothScroll.js?ver=5.5.1' id='SmoothScroll-jquery-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/themes/advance-fitness-gym/js/custom.js?ver=5.5.1' id='advance-fitness-gym-customscripts-jquery-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/themes/advance-fitness-gym/js/bootstrap.js?ver=5.5.1' id='bootstrap-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/themes/advance-fitness-gym/js/jquery.superfish.js?ver=5.5.1' id='jquery-superfish-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+        <script type='text/javascript' src='https://athleticprospects.com/wp-content/plugins/instagram-feed/js/sb-instagram-2-2.min.js?ver=2.4.7' id='sb_instagram_scripts-js'></script>
 
-        <link rel="stylesheet" type="text/css" href="assets/javascript/jqueryui-1.12.1/jquery-ui.css" />
-        <script type="text/javascript" src="assets/javascript/jqueryui-1.12.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="assets/javascript/jPaginate/src/jQuery.paginate.js"></script>
-        <script src="assets/javascript/inputmask/dist/jquery.inputmask.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="assets/javascript/jqueryui-1.12.1/jquery-ui.css" /> -->
+        <!-- <script type="text/javascript" src="assets/javascript/jPaginate/src/jQuery.paginate.js"></script> -->
+        <script type='text/javascript' src="{{ URL::asset('js/inputmask/inputmasking.js') }}"></script>
         <meta http-equiv="content-type" content="text/php; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Dale Moore">

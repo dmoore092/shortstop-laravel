@@ -41,17 +41,16 @@
         <link rel="canonical" href="https://athleticprospects.com/fitness-programs/" />
 
         <!-- my stuff below -->
-        <!-- Scripts -->
-        <script src="/js/app.js" defer></script>
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
-
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-        <script src="{{asset('js/inputmask/dist/jquery.inputmask.js') }}"></script>
-        <script src="/js/inputmask/dist/jquery.inputmask.js"></script>
+        <!-- Scripts -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script type='text/javascript' src="/js/app.js" defer></script> -->
+        <script type='text/javascript' src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script type='text/javascript' src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+        <script type='text/javascript' src="/js/inputmask/dist/jquery.inputmask.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+
     </head>
 <body>
     <div id="app">
