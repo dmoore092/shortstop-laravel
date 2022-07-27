@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Profile')
 
 @section('content')
-<div class="jumbotron col-lg-7 bg-white ml-auto mr-auto ">
+<div class="jumbotron col-lg-10 ml-auto mr-auto">
     <h1 class="display-4">
         {{$user->name}}
         @if(!auth::guest())
@@ -18,7 +18,7 @@
     <h2 class="display-5"></h2>
     <div>
         <div class="row">
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-4 col-md-3">
                 <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="col-sm-4 img-fluid" style="max-width:300px" alt="Player Profile Image">
                 <p><a href="#" class="pl-3">Report this profile</a></p>
             </div>
@@ -32,9 +32,7 @@
                         <p class="card-text"><span class="profile-labels">Home Phone:</span> {{$user->home_phone}} <p>
                         @endif
                         <p class="card-text"><span class="profile-labels">Email: </span><a href="mailto:{{$user->email}}">{{$user->email}}</a><p>
-                        @if($user->id == 1 or $user->id == 2)
                         <p class="card-text"><span class="profile-labels">Address:</span> {{$user->address}}<p>
-                        @endif
                         <p class="card-text"><span class="profile-labels">City:</span> {{$user->city}} <p>
                         <p class="card-text"><span class="profile-labels">State:</span> {{$user->state}}<p>
                         <p class="card-text"><span class="profile-labels">Zip:</span> {{$user->zip}} <p>
@@ -50,29 +48,15 @@
                         <h5 class="card-title">Sport Info</h5>
                         <p class="card-text"><span class="profile-labels">Sport:</span> {{$user->sport}}</p>
                         <p class="card-text"><span class="profile-labels">Primary Position:</span> {{$user->primary_position}} </p>
-                        @if($user->secondary_position != "")
                         <p class="card-text"><span class="profile-labels">Secondary Position:</span> {{$user->secondary_position}}</p>
-                        @endif
-                        @if($user->travel_team != "")
                         <p class="card-text"><span class="profile-labels">Travel Team:</span> {{$user->travel_team}} </p>
-                        @endif
-                        @if($user->gpa != "")
                         <p class="card-text"><span class="profile-labels">GPA:</span> {{$user->gpa}}</p>
-                        @endif
-                        @if($user->act != "")
                         <p class="card-text"><span class="profile-labels">ACT:</span> {{$user->act}}</p>
-                        @endif
-                        @if($user->sat != "")
                         <p class="card-text"><span class="profile-labels">SAT:</span> {{$user->sat}}</p>
-                        @endif
-                        @if($user->id == 1 or $user->id == 2)
                         <p class="card-text"><span class="profile-labels">Facebook:</span> {{$user->facebook}} </p>
                         <p class="card-text"><span class="profile-labels">Instagram:</span> {{$user->instagram}} </p>
                         <p class="card-text"><span class="profile-labels">Twitter:</span> {{$user->twitter}}</p>
-                        @endif
-                        @if($user->commitment != "")
                         <p class="card-text"><span class="profile-labels">Commitment:</span> {{$user->commitment}} </p>
-                        @endif
                     </div>
                 </div>
             </div>
@@ -85,21 +69,21 @@
     <div>
         <h4>Videos</h4>
         <div class="row">
-            @if($user->showcase1 !== null and $user->showcase1 != "")
+            @if($user->showcase1 !== null)
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase1}}"></iframe>
                     </div>
                 </div>
             @endif
-            @if($user->showcase2 !== null and $user->showcase2 != "")
+            @if($user->showcase2 !== null)
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase2}}"></iframe>
                     </div>
                 </div>
             @endif
-            @if($user->showcase2 !== null and $user->showcase3 != "")
+            @if($user->showcase2 !== null)
                 <div class="col-sm-4 mb-3">
                     <div class="card">
                         <iframe allowfullscreen type='text/html' height="250px" src="https://www.youtube.com/embed/{{$user->showcase3}}"></iframe>
@@ -153,11 +137,14 @@
         </div>
     </div>
     @endif
-    <div>
-        <hr class="my-4">
-    </div>
+<div>
+
+
+
+
+    <hr class="my-4">
+    @include('includes.footer')
 </div>
-@include('includes.footer')
 @endsection
 
 {{--

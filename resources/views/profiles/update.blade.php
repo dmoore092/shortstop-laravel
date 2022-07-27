@@ -3,7 +3,7 @@
 @section('title', 'Athletic Prospects | Update Profile')
 @section('content')
 
-<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
+<div class="jumbotron col-md-7 ml-auto mr-auto">
     <span class="float-right">
         @if(!auth::guest())
             @if(auth::user()->id == $user->id || auth::user()->role == 'admin')
@@ -16,15 +16,6 @@
     </span>
     {!! Form::open(['action' => ['PlayerController@update', $user->id], 'method' => 'POST', 'files'=>'true']) !!}
     <h1 class="display-4">Edit Profile</h1>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <div class="row">
         <div class="col-sm-6">
             <div class="card mb-5">
@@ -35,17 +26,17 @@
                         {{Form::label('name', 'Name', array('class' => 'update-label'))}}
                         {{Form::text('name', $user->name, ['class' => 'form', 'placeholder' => 'Name'])}}
                         {{-- @endif --}}
-                        {{Form::label('gender', 'Gender*', array('class' => 'update-label'))}}
+                        {{Form::label('gender', 'Gender', array('class' => 'update-label'))}}
                         {{Form::select('gender', array('Male' => 'Male', 'Female' => 'Female'), $user->gender, ['class' => 'form-select'])}}
-                        {{Form::label('cell_phone', 'Cell Phone*', array('class' => 'update-label'))}}
-                        {{Form::text('cell_phone', $user->cell_phone, array( 'required' => 'required'), ['class' => 'form', 'id' => 'cell_phone', 'placeholder' => 'Cell Phone'])}}
-                        {{Form::label('home_phone', 'Home Phone*', array('class' => 'update-label', 'required' => 'required'))}}
-                        {{Form::text('home_phone', $user->home_phone, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'Home Phone'])}}
-                        {{Form::label('address', 'Address*', array('class' => 'update-label'))}}
-                        {{Form::text('address', $user->address, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'Address'],)}}
-                        {{Form::label('city', 'City*', array('class' => 'update-label'))}}
-                        {{Form::text('city', $user->city, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'City'])}}
-                        {{Form::label('state', 'State*', array('class' => 'update-label'))}}
+                        {{Form::label('cell_phone', 'Cell Phone', array('class' => 'update-label'))}}
+                        {{Form::text('cell_phone', $user->cell_phone, ['class' => 'form', 'id' => 'cell_phone', 'placeholder' => 'Cell Phone'])}}
+                        {{Form::label('home_phone', 'Home Phone', array('class' => 'update-label'))}}
+                        {{Form::text('home_phone', $user->home_phone, ['class' => 'form', 'placeholder' => 'Home Phone'])}}
+                        {{Form::label('address', 'Address', array('class' => 'update-label'))}}
+                        {{Form::text('address', $user->address, ['class' => 'form', 'placeholder' => 'Address'])}}
+                        {{Form::label('city', 'City', array('class' => 'update-label'))}}
+                        {{Form::text('city', $user->city, ['class' => 'form', 'placeholder' => 'City'])}}
+                        {{Form::label('state', 'State', array('class' => 'update-label'))}}
                         {{Form::select('state', array('New York' => 'New York', 'Alabama' => 'Alabama', 'Alaska' => 'Alaska', 'Arizona' => 'Arizona',
                                                         'Arkansas' => 'Arkansas', 'California' => 'California', 'Colorado' => 'Colorado', 'Connecticut' => 'Connecticut',
                                                         'Delaware' => 'Delaware', 'District of Columbia' => 'District of Columbia','Florida' => 'Florida', 'Georgia' => 'Georgia', 'Hawaii' => 'Hawaii',
@@ -61,21 +52,22 @@
                                                         'West Virginia' => 'West Virginia', 'Wisconsin' => 'Wisconsin', 'Wyoming' => 'Wyoming',
                                                         ), $user->state, ['class' => 'form-select'])}}
 
-                        {{Form::label('zip', 'Zip*', array('class' => 'update-label'))}}
-                        {{Form::text('zip', $user->zip, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => '12345'])}}
-                        {{Form::label('highschool', 'School*', array('class' => 'update-label'))}}
-                        {{Form::text('highschool', $user->highschool, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'School'])}}
-                        {{Form::label('weight', 'Weight*', array('class' => 'update-label'))}}
-                        {{Form::text('weight', $user->weight, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'Weight'])}}
-                        <div>
-                            {{Form::label('height', 'Height*', array('class' => 'update-label float-left height-labels'))}}
+                        {{Form::label('zip', 'Zip', array('class' => 'update-label'))}}
+                        {{Form::text('zip', $user->zip, ['class' => 'form', 'placeholder' => '12345'])}}
+                        {{Form::label('highschool', 'Highschool', array('class' => 'update-label'))}}
+                        {{Form::text('highschool', $user->highschool, ['class' => 'form', 'placeholder' => 'Highschool'])}}
+                        {{Form::label('weight', 'Weight', array('class' => 'update-label'))}}
+                        {{Form::text('weight', $user->weight, ['class' => 'form', 'placeholder' => 'Weight'])}}
+                        <span>
+                            {{Form::label('height', 'Height', array('class' => 'update-label float-left height-labels'))}}
                             {{Form::selectRange('height_feet', 4, 7, $user->height_feet, ['class' => 'form-range'])}}
+                            {{-- {{Form::label('height_inches', '', array('class' => 'update-label float-right height-labels'))}} --}}
                             {{Form::selectRange('height_inches', 0, 11, $user->height_inches, ['class' => 'form-range'])}}
-                        </div>
-                        {{Form::label('grad_year', 'Class Of*', array('class' => 'update-label'))}}
-                        {{Form::text('grad_year', $user->grad_year, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'Class Of'])}}
-                        {{Form::label('gpa', 'GPA*', array('class' => 'update-label'))}}
-                        {{Form::text('gpa', $user->gpa, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'GPA'])}}
+                        </span>
+                        {{Form::label('grad_year', 'Class Of', array('class' => 'update-label'))}}
+                        {{Form::text('grad_year', $user->grad_year, ['class' => 'form', 'placeholder' => 'Class Of'])}}
+                        {{Form::label('gpa', 'GPA', array('class' => 'update-label'))}}
+                        {{Form::text('gpa', $user->gpa, ['class' => 'form', 'placeholder' => 'GPA'])}}
                         {{Form::label('sat', 'SAT', array('class' => 'update-label'))}}
                         {{Form::text('sat', $user->sat, ['class' => 'form', 'placeholder' => 'SAT'])}}
                         {{Form::label('act', 'ACT', array('class' => 'update-label'))}}
@@ -92,25 +84,24 @@
                     <h5 class="card-title">Sport Info</h5>
                     <p class="card-text">
                         {{Form::label('sport', 'Sport', array('class' => 'update-label'))}}
-                        {{Form::select('sport', array('Baseball' => 'Baseball', 'Softball' => 'Softball'),$user->sport, ['class' => 'form-select'])}}
-                        <!-- {{Form::select('sport', array('Baseball' => 'Baseball', 'Football' => 'Football', 'Basketball' => 'Basketball',
+                        {{Form::select('sport', array('Baseball' => 'Baseball', 'Football' => 'Football', 'Basketball' => 'Basketball',
                                                       'Softball' => 'Softball', 'Hockey' => 'Hockey', 'Field Hockey' => 'Field Hockey',
                                                       'Lacrosse' => 'Lacrosse', 'Soccer' => 'Soccer', 'Track and Field' => 'Track and Field',
                                                        'Volleyball' => 'Volleyball', 'Wrestling' => 'Wrestling', 'Tennis' => 'Tennis',
                                                        'Swimming' => 'Swimming', 'Golf' => 'Golf', 'Gymnastics' => 'Gymnastics', 'Cheerleading' => 'Cheerleading',
-                                                        'Esports' => 'Esports'),$user->sport, ['class' => 'form-select'])}} -->
-                        {{Form::label('primary_position', 'Primary Position*', array('class' => 'update-label'))}}
-                        {{Form::text('primary_position', $user->primary_position, array( 'required' => 'required'), ['class' => 'form', 'placeholder' => 'Primary Position'])}}
+                                                        'Esports' => 'Esports'),$user->sport, ['class' => 'form-select'])}}
+                        {{Form::label('primary_position', 'Primary Position', array('class' => 'update-label'))}}
+                        {{Form::text('primary_position', $user->primary_position, ['class' => 'form', 'placeholder' => 'Primary Position'])}}
                         {{Form::label('secondary_position', 'Secondary Position', array('class' => 'update-label'))}}
                         {{Form::text('secondary_position', $user->secondary_position, ['class' => 'form', 'placeholder' => 'Secondary Position'])}}
                         {{Form::label('travel_team', 'Travel Team', array('class' => 'update-label'))}}
                         {{Form::text('travel_team', $user->travel_team, ['class' => 'form', 'placeholder' => 'Travel Team'])}}
                         {{Form::label('showcase1', 'Highlight Video 1', array('class' => 'update-label'))}}
-                        {{Form::text('showcase1', 'https://www.youtube.com/watch?v='.$user->showcase1, ['class' => 'form', 'placeholder' => 'YouTube URL'])}}
+                        {{Form::text('showcase1', $user->showcase1, ['class' => 'form', 'placeholder' => ''])}}
                         {{Form::label('showcase2', 'Highlight Video 2', array('class' => 'update-label'))}}
-                        {{Form::text('showcase2', 'https://www.youtube.com/watch?v='.$user->showcase2, ['class' => 'form', 'placeholder' => 'YouTube URL'])}}
+                        {{Form::text('showcase2', $user->showcase2, ['class' => 'form', 'placeholder' => ''])}}
                         {{Form::label('showcase3', 'Highlight Video 3', array('class' => 'update-label'))}}
-                        {{Form::text('showcase3', 'https://www.youtube.com/watch?v='.$user->showcase3, ['class' => 'form', 'placeholder' => 'YouTube URL'])}}
+                        {{Form::text('showcase3', $user->showcase3, ['class' => 'form', 'placeholder' => ''])}}
                         {{Form::label('personal_statement', 'Personal Statement', array('class' => 'update-label'))}}
                         {{Form::text('personal_statement', $user->personal_statement, ['class' => 'form', 'placeholder' => 'Statement'])}}
                         {{Form::label('commitment', 'Commitment', array('class' => 'update-label'))}}
@@ -174,7 +165,7 @@
     {{Form::submit('Submit', ['class' => 'btn btn-secondary'])}}
   {!! Form::close() !!}
 <hr>
-
-</div>{{-- end of jumbotron --}}
 @include('includes.footer')
+</div>{{-- end of jumbotron --}}
 @endsection
+

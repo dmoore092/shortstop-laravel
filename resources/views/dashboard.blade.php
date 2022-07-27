@@ -2,7 +2,7 @@
 
 @section('title', 'Athletic Prospects | Dashboard')
 @section('content')
-<div class="jumbotron col-md-7 ml-auto mr-auto mt-5">
+<div class="jumbotron col-md-7 ml-auto mr-auto">
 
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -16,7 +16,7 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="https://shortstop-userimages.s3.amazonaws.com/{{$user->profile_image}}" class="card-img" alt="Player Profile Image">
+                    <img src="/images/{{$user->profile_image}}" class="card-img" alt="Player Profile Image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -33,7 +33,6 @@
         </div>
     @endif
     <hr class="my-4">
-    
+    @include('includes.footer')
 </div>
-@include('includes.footer')
 @endsection

@@ -98,6 +98,7 @@
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/unisharp/laravel-ckeditor" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/shortstop-api/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aws/aws-sdk-php" />
@@ -194,6 +195,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/unisharp/laravel-ckeditor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>

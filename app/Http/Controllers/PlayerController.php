@@ -33,7 +33,7 @@ class PlayerController extends Controller
     public function index()
     {
         //this is when arriving at /player with no id set, show all players
-        $users = User::where('users.role','player')->paginate(200);
+        $users = User::where('users.role','player')->paginate(20);
 
         return view('profiles.players')->with('users', $users);
     }
@@ -106,40 +106,28 @@ class PlayerController extends Controller
         $showcase2 = null;
         $showcase3 = null;
 
-        $validate = $request->validate([
-            'name' => 'required',
+        $this->validate($request, [
             'gender' => 'required',
+            'sport' => 'required',
             'cell_phone' => 'required',
             'home_phone' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'zip' => 'required',
-            'highschool' => 'required',
-            'weight' => 'required',
-            'height_feet' => 'required',
-            'height_inches' => 'required',
-            'grad_year' => 'required',
-            'gpa' => 'required',
-            'sport' => 'required',
-            'primary_position' => 'required',
         ]);
-
 
         if($request->has('showcase1')){
             if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase1 = $match[1];
+//                return dd($showcase1);
             }
         }
 
         if($request->has('showcase2')){
-            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase2'), $match)){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase2 = $match[1];
             }
         }
 
         if($request->has('showcase3')){
-            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase3'), $match)){
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $request->input('showcase1'), $match)){
                 $showcase3 = $match[1];
             }
         }

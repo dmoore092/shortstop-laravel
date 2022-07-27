@@ -11,6 +11,7 @@ $(document).ready(function(){
     $('#zip').inputmask({"mask": "99999[-9999]"}, { greedy: false }); //specifying options
     //$(selector).inputmask("9-a{1,3}9{1,3}"); //mask with dynamic syntax
 
+    // $('#players-table').DataTable();
     var table = $('#players-table').DataTable({
         responsive: true
     });
@@ -22,6 +23,8 @@ $(document).ready(function(){
             .draw();
     } );
 
-    $('#navButton').sidr();
+    //ckeditor
+    CKEDITOR.replace( 'blog-textarea' );
+    CKEDITOR.replace( 'home-textarea' );
+    CKEDITOR.replace( 'about-textarea' );
 });
-

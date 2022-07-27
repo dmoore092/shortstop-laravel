@@ -10,7 +10,51 @@ use App\Blog;
 class PagesController extends Controller
 {
     public function index(){
-        return redirect('https://athleticprospects.com');
+        //show homepage with post from db
+        try{
+            $post = HomeInfo::orderBy('created_at', 'desc')->limit(1)->get();
+            return view('pages.home')->with('post', $post[0]);
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+
+        }
+//        return dd($post[0]->header);
+        return view('pages.home')->with('post', $post[0]);
+
     }
 
+    public function updateHome(Request $request){
+        //edit info on homepage
+        $this->middleware('admin');
+
+        $post = new HomeInfo;
+        $post->header = $request->header;
+        $post->text = $request->text;
+        $post->edited_by = auth()->user()->name;
+        $post->save();
+        return redirect()->action('PagesController@index');
+    }
+
+    public function about(){
+        //show about us page with info from db
+        try{
+            $post = AboutInfo::orderBy('created_at', 'desc')->limit(1)->get();
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+
+        }
+        return view('pages.about')->with('post', $post[0]);
+    }
+
+    public function updateAbout(Request $request){
+        //update about us page
+        $this->middleware('admin');
+
+        $post = new AboutInfo;
+        $post->header = $request->header;
+        $post->text = $request->text;
+        $post->edited_by = auth()->user()->name;
+        $post->save();
+        return redirect()->action('PagesController@index');
+    }
 }
